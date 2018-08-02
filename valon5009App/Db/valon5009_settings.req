@@ -1,0 +1,25 @@
+# This file specifies which PVs of the corresponding database should be saved.
+
+# Output Frequency
+$(P)$(R)Src1Freq-SP
+$(P)$(R)Src2Freq-SP
+
+# Output Frequency Offset
+$(P)$(R)Src1FreqOffset-SP
+$(P)$(R)Src2FreqOffset-SP
+
+# Attenuator
+$(P)$(R)Src1Attenuator-SP
+$(P)$(R)Src2Attenuator-SP
+
+# Power Level
+$(P)$(R)Src1PwrLvl-Sel
+$(P)$(R)Src2PwrLvl-Sel
+
+# Enable Output Buffer Amplifier
+$(P)$(R)Src1EnblBuffAmp-Sel
+$(P)$(R)Src2EnblBuffAmp-Sel
+
+# Power Down Source
+$(P)$(R)Src1PwrDown-Sel
+$(P)$(R)Src2PwrDown-Sel

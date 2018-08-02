@@ -1,0 +1,341 @@
+######################################################################
+# General setup
+
+Terminator = "\r\n";
+ExtraInput = Ignore;
+
+######################################################################
+# Reset to factory settings
+
+outRst {
+    out "RST";
+}
+
+######################################################################
+# Save channel config to flash
+
+# Save twice using different src1 names, so that no msg
+# is displayed informing that the configuration 
+# has not changed, which is difficult to deal with
+# in Stream Device.
+
+save {
+    out "S1";
+    in "";
+    out "NAM prepsav";
+    in "";
+    out "SAV";
+    in "";
+    out "NAM src1";
+    in "";
+    out "SAV";
+    in "";
+}
+
+######################################################################
+# Source frequency (MHz)
+
+outFreq1 {
+    out "S1";
+    in "";
+    out "F %f m";
+    in "";
+    in "F %*f MHz; // Act %*f MHz";
+}
+
+outFreq2 {
+    out "S2";
+    in "";
+    out "F %f m";
+    in "";
+    in "F %*f MHz; // Act %*f MHz";
+}
+
+inFreq1 {
+      out "S1";
+      in "";
+      out "F? m";
+      in "";
+      in "F %f MHz; // Act %*f MHz";
+
+    @init{
+      out "S1";
+      in "";
+      out "F? m";
+      in "";
+      in "F %f MHz; // Act %*f MHz";
+    }
+}
+
+inFreq2 {
+      out "S2";
+      in "";
+      out "F? m";
+      in "";
+      in "F %f MHz; // Act %*f MHz";
+
+    @init{
+      out "S2";
+      in "";
+      out "F? m";
+      in "";
+      in "F %f MHz; // Act %*f MHz";
+    }
+}
+
+######################################################################
+# Frequency offset (MHz)
+
+outOffset1 {
+    out "S1";
+    in "";
+    out "OFF %f m";
+    in "";
+    in "OFFSET %*f MHz;";
+}
+
+outOffset2 {
+    out "S2";
+    in "";
+    out "OFF %f m";
+    in "";
+    in "OFFSET %*f MHz;";
+}
+
+inOffset1 {
+      out "S1";
+      in "";
+      out "OFF? m";
+      in "";
+      in "OFFSET %f MHz;";
+
+    @init{
+      out "S1";
+      in "";
+      out "OFF? m";
+      in "";
+      in "OFFSET %f MHz;";
+    }
+}
+
+inOffset2 {
+      out "S2";
+      in "";
+      out "OFF? m";
+      in "";
+      in "OFFSET %f MHz;";
+
+    @init{
+      out "S2";
+      in "";
+      out "OFF? m";
+      in "";
+      in "OFFSET %f MHz;";
+    }
+}
+
+
+######################################################################
+# Attenuator (dB)
+
+outAtten1 {
+    out "S1";
+    in "";
+    out "ATT %f";
+    in "";
+    in "ATT %*f; // dB";
+}
+
+outAtten2 {
+    out "S2";
+    in "";
+    out "ATT %f";
+    in "";
+    in "ATT %*f; // dB";
+}
+
+inAtten1 {
+     out "S1";
+     in "";
+     out "ATT?";
+     in "";
+     in "ATT %f; // dB";
+
+   @init{
+     out "S1";
+     in "";
+     out "ATT?";
+     in "";
+     in "ATT %f; // dB";
+   }
+}
+
+inAtten2 {
+     out "S2";
+     in "";
+     out "ATT?";
+     in "";
+     in "ATT %f; // dB";
+
+   @init{
+     out "S2";
+     in "";
+     out "ATT?";
+     in "";
+     in "ATT %f; // dB";
+   }
+}
+
+######################################################################
+# Power level option (0,1,2,3)
+
+outPwrLvl1 {
+    out "S1";
+    in "";
+    out "PLEV %{0|1|2|3}";
+    in "";
+    in "PLEVEL %*i; // %*i";
+}
+
+outPwrLvl2 {
+    out "S2";
+    in "";
+    out "PLEV %{0|1|2|3}";
+    in "";
+    in "PLEVEL %*i; // %*i";
+}
+
+inPwrLvl1 {
+     out "S1";
+     in "";
+     out "PLEV?";
+     in "";
+     in "PLEVEL %i; // %*i";
+
+   @init{
+     out "S1";
+     in "";
+     out "PLEV?";
+     in "";
+     in "PLEVEL %i; // %*i";
+   }
+}
+
+inPwrLvl2 {
+     out "S2";
+     in "";
+     out "PLEV?";
+     in "";
+     in "PLEVEL %i; // %*i";
+
+   @init{
+     out "S2";
+     in "";
+     out "PLEV?";
+     in "";
+     in "PLEVEL %i; // %*i";
+   }
+}
+
+######################################################################
+# Enable output buffer amplifier
+# Disabling the amplifier provides 50 dB attenuation
+
+outAmpEnbl1 {
+    out "S1";
+    in "";
+    out "OEN %{0|1}";
+    in "";
+    in "OEN %*i;";
+}
+
+outAmpEnbl2 {
+    out "S2";
+    in "";
+    out "OEN %{0|1}";
+    in "";
+    in "OEN %*i;";
+}
+
+inAmpEnbl1 {
+      out "S1";
+      in "";
+      out "OEN?";
+      in "";
+      in "OEN %i";
+
+    @init{
+      out "S1";
+      in "";
+      out "OEN?";
+      in "";
+      in "OEN %i";
+    }
+}
+
+inAmpEnbl2 {
+      out "S2";
+      in "";
+      out "OEN?";
+      in "";
+      in "OEN %i";
+
+    @init{
+      out "S2";
+      in "";
+      out "OEN?";
+      in "";
+      in "OEN %i";
+    }
+}
+
+######################################################################
+# Power source down
+
+outPwrDown1 {
+    out "S1";
+    in "";
+    out "PDN %{0|1}";
+    in "";
+    in "PDN %*{0|1}";
+}
+
+outPwrDown2 {
+    out "S2";
+    in "";
+    out "PDN %{0|1}";
+    in "";
+    in "PDN %*{0|1}";
+}
+
+inPwrDown1 {
+      out "S1";
+      in "";
+      out "PDN?";
+      in "";
+      in "PDN %i";
+
+    @init{
+      out "S1";
+      in "";
+      out "PDN?";
+      in "";
+      in "PDN %i";
+    }
+}
+
+inPwrDown2 {
+      out "S2";
+      in "";
+      out "PDN?";
+      in "";
+      in "PDN %i";
+
+    @init{
+      out "S2";
+      in "";
+      out "PDN?";
+      in "";
+      in "PDN %i";
+    }
+}

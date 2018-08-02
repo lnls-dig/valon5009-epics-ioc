@@ -1,0 +1,315 @@
+############################################################
+#
+#              VALON 5009 FREQUENCY SYNTHESIZER
+#                      RECORD DATABASE
+#
+
+############################################################
+# GENERAL
+#
+# Desc: General parameters to control the device main
+#       features.
+
+# Reset
+
+record(bo, "$(P)$(R)Rst-Cmd"){
+  field(DESC, "Reset to factory settings")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+  field(HIGH, "0.5")
+  field(FLNK, "$(P)$(R)ValidRst")
+}
+
+record(calcout, "$(P)$(R)ValidRst"){
+  field(DESC, "Validate reset command")
+  field(INPA, "$(P)$(R)Rst-Cmd")
+  field(CALC, "A")
+  field(OOPT, "When Non-zero")
+  field(DTYP, "stream")
+  field(OUT, "@valon5009.proto outRst $(PORT)")
+}
+
+# Save params to flash
+
+record(bo, "$(P)$(R)Save-Cmd"){
+  field(DESC, "Save params to flash")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+  field(HIGH, "0.5")
+  field(FLNK, "$(P)$(R)ValidSave")
+}
+
+record(calcout, "$(P)$(R)ValidSave"){
+  field(DESC, "Validate save params command")
+  field(INPA, "$(P)$(R)Save-Cmd")
+  field(CALC, "A")
+  field(OOPT, "When Non-zero")
+  field(DTYP, "stream")
+  field(OUT, "@valon5009.proto save $(PORT)")
+}
+
+# Frequency
+
+record(ao, "$(P)$(R)Src1Freq-SP"){
+  field(DESC, "Source 1 output frequency")
+  field(DTYP, "stream")
+  field(PREC, "6")
+  field(DRVH, "6000")
+  field(DRVL, "23.5")
+  field(EGU, "MHz")
+  field(OUT, "@valon5009.proto outFreq1 $(PORT)")
+  field(FLNK, "$(P)$(R)Src1Freq-RB")
+}
+
+record(ai, "$(P)$(R)Src1Freq-RB"){
+  field(DESC, "Source 1 output frequency RB")
+  field(DTYP, "stream")
+  field(PREC, "6")
+  field(EGU, "MHz")
+  field(INP, "@valon5009.proto inFreq1 $(PORT)")
+}
+
+record(ao, "$(P)$(R)Src2Freq-SP"){
+  field(DESC, "Source 2 output frequency")
+  field(DTYP, "stream")
+  field(PREC, "6")
+  field(DRVH, "6000")
+  field(DRVL, "23.5")
+  field(EGU, "MHz")
+  field(OUT, "@valon5009.proto outFreq2 $(PORT)")
+  field(FLNK, "$(P)$(R)Src2Freq-RB")
+}
+
+record(ai, "$(P)$(R)Src2Freq-RB"){
+  field(DESC, "Source 2 output frequency RB")
+  field(DTYP, "stream")
+  field(PREC, "6")
+  field(EGU, "MHz")
+  field(INP, "@valon5009.proto inFreq2 $(PORT)")
+}
+
+# Frequency Offset
+
+record(ao, "$(P)$(R)Src1FreqOffset-SP"){
+  field(DESC, "Source 1 frequency offset")
+  field(DTYP, "stream")
+  field(PREC, "6")
+  field(DRVH, "6000")
+  field(DRVL, "23.5")
+  field(EGU, "MHz")
+  field(OUT, "@valon5009.proto outOffset1 $(PORT)")
+  field(FLNK, "$(P)$(R)Src1FreqOffset-RB")
+}
+
+record(ai, "$(P)$(R)Src1FreqOffset-RB"){
+  field(DESC, "Source 1 frequency offset RB")
+  field(DTYP, "stream")
+  field(PREC, "6")
+  field(EGU, "MHz")
+  field(INP, "@valon5009.proto inOffset1 $(PORT)")
+}
+
+record(ao, "$(P)$(R)Src2FreqOffset-SP"){
+  field(DESC, "Source 2 frequency offset")
+  field(DTYP, "stream")
+  field(PREC, "6")
+  field(DRVH, "6000")
+  field(DRVL, "23.5")
+  field(EGU, "MHz")
+  field(OUT, "@valon5009.proto outOffset2 $(PORT)")
+  field(FLNK, "$(P)$(R)Src2FreqOffset-RB")
+}
+
+record(ai, "$(P)$(R)Src2FreqOffset-RB"){
+  field(DESC, "Source 2 frequency offset RB")
+  field(DTYP, "stream")
+  field(PREC, "6")
+  field(EGU, "MHz")
+  field(INP, "@valon5009.proto inOffset2 $(PORT)")
+}
+
+# Attenuator
+
+record(ao, "$(P)$(R)Src1Attenuator-SP"){
+  field(DESC, "Source 1 attenuator")
+  field(PREC, "6")
+  field(DRVH, "31.5")
+  field(DRVL, "0")
+  field(EGU, "dB")
+  field(FLNK, "$(P)$(R)Src1AttenuatorCalc")
+}
+
+record(calcout, "$(P)$(R)Src1AttenuatorCalc"){
+  field(DESC, "Source 1 attenuator calc")
+  field(DTYP, "stream")
+  field(INPA, "$(P)$(R)Src1Attenuator-SP")
+  field(CALC, "B:=A/0.5;C:=floor(B);A-(B-C)*0.5")
+  field(OUT, "@valon5009.proto outAtten1 $(PORT)")
+  field(FLNK, "$(P)$(R)Src1Attenuator-RB")
+}
+
+record(ai, "$(P)$(R)Src1Attenuator-RB"){
+  field(DESC, "Source 1 attenuator RB")
+  field(DTYP, "stream")
+  field(PREC, "6")
+  field(EGU, "dB")
+  field(INP, "@valon5009.proto inAtten1 $(PORT)")
+}
+
+record(ao, "$(P)$(R)Src2Attenuator-SP"){
+  field(DESC, "Source 2 attenuator")
+  field(PREC, "6")
+  field(DRVH, "31.5")
+  field(DRVL, "0")
+  field(EGU, "dB")
+  field(FLNK, "$(P)$(R)Src2AttenuatorCalc")
+}
+
+record(calcout, "$(P)$(R)Src2AttenuatorCalc"){
+  field(DESC, "Source 2 attenuator calc")
+  field(DTYP, "stream")
+  field(INPA, "$(P)$(R)Src2Attenuator-SP")
+  field(CALC, "B:=A/0.5;C:=floor(B);A-(B-C)*0.5")
+  field(OUT, "@valon5009.proto outAtten2 $(PORT)")
+  field(FLNK, "$(P)$(R)Src2Attenuator-RB")
+}
+
+record(ai, "$(P)$(R)Src2Attenuator-RB"){
+  field(DESC, "Source 2 attenuator RB")
+  field(DTYP, "stream")
+  field(PREC, "6")
+  field(EGU, "dB")
+  field(INP, "@valon5009.proto inAtten2 $(PORT)")
+}
+
+# Power level
+
+record(mbbo, "$(P)$(R)Src1PwrLvl-Sel"){
+  field(DESC, "Source 1 power level mode")
+  field(ZRST, "0")
+  field(ZRVL, "0")
+  field(ONST, "1")
+  field(ONVL, "1")
+  field(TWST, "2")
+  field(TWVL, "2")
+  field(THST, "3")
+  field(THVL, "3")
+  field(DTYP, "stream")
+  field(OUT, "@valon5009.proto outPwrLvl1 $(PORT)")
+  field(FLNK, "$(P)$(R)Src1PwrLvl-Sts")
+}
+
+record(mbbi, "$(P)$(R)Src1PwrLvl-Sts"){
+  field(DESC, "Source 1 power level mode Sts")
+  field(ZRST, "0")
+  field(ZRVL, "0")
+  field(ONST, "1")
+  field(ONVL, "1")
+  field(TWST, "2")
+  field(TWVL, "2")
+  field(THST, "3")
+  field(THVL, "3")
+  field(DTYP, "stream")
+  field(INP, "@valon5009.proto inPwrLvl1 $(PORT)")
+}
+
+record(mbbo, "$(P)$(R)Src2PwrLvl-Sel"){
+  field(DESC, "Source 2 power level mode")
+  field(ZRST, "0")
+  field(ZRVL, "0")
+  field(ONST, "1")
+  field(ONVL, "1")
+  field(TWST, "2")
+  field(TWVL, "2")
+  field(THST, "3")
+  field(THVL, "3")
+  field(DTYP, "stream")
+  field(OUT, "@valon5009.proto outPwrLvl2 $(PORT)")
+  field(FLNK, "$(P)$(R)Src2PwrLvl-Sts")
+}
+
+record(mbbi, "$(P)$(R)Src2PwrLvl-Sts"){
+  field(DESC, "Source 2 power level mode Sts")
+  field(ZRST, "0")
+  field(ZRVL, "0")
+  field(ONST, "1")
+  field(ONVL, "1")
+  field(TWST, "2")
+  field(TWVL, "2")
+  field(THST, "3")
+  field(THVL, "3")
+  field(DTYP, "stream")
+  field(INP, "@valon5009.proto inPwrLvl2 $(PORT)")
+}
+
+# Enable/disable Output Buffer Amplifier
+
+record(bo, "$(P)$(R)Src1EnblBuffAmp-Sel"){
+  field(DESC,  "Enable src 1 output buffer amplifier")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+  field(DTYP, "stream")
+  field(OUT, "@valon5009.proto outAmpEnbl1 $(PORT)")
+  field(FLNK, "$(P)$(R)Src1EnblBuffAmp-Sts")
+}
+
+record(bi, "$(P)$(R)Src1EnblBuffAmp-Sts"){
+  field(DESC,  "Enable src 1 output buffer amplifier sts")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+  field(DTYP, "stream")
+  field(INP, "@valon5009.proto inAmpEnbl1 $(PORT)")
+}
+
+record(bo, "$(P)$(R)Src2EnblBuffAmp-Sel"){
+  field(DESC,  "Enable src 2 output buffer amplifier")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+  field(DTYP, "stream")
+  field(OUT, "@valon5009.proto outAmpEnbl2 $(PORT)")
+  field(FLNK, "$(P)$(R)Src2EnblBuffAmp-Sts")
+}
+
+record(bi, "$(P)$(R)Src2EnblBuffAmp-Sts"){
+  field(DESC,  "Enable src 2 output buffer amplifier sts")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+  field(DTYP, "stream")
+  field(INP, "@valon5009.proto inAmpEnbl2 $(PORT)")
+}
+
+# Power Down Source
+
+record(bo, "$(P)$(R)Src1PwrDown-Sel"){
+  field(DESC, "Power down source 1")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+  field(DTYP, "stream")
+  field(OUT, "@valon5009.proto outPwrDown1 $(PORT)")
+  field(FLNK, "$(P)$(R)Src1PwrDown-Sts")
+}
+
+record(bi , "$(P)$(R)Src1PwrDown-Sts"){
+  field(DESC, "Source 1 power down status")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+  field(DTYP, "stream")
+  field(INP, "@valon5009.proto inPwrDown1 $(PORT)")
+}
+
+record(bo, "$(P)$(R)Src2PwrDown-Sel"){
+  field(DESC, "Power down source 2")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+  field(DTYP, "stream")
+  field(OUT, "@valon5009.proto outPwrDown2 $(PORT)")
+  field(FLNK, "$(P)$(R)Src2PwrDown-Sts")
+}
+
+record(bi , "$(P)$(R)Src2PwrDown-Sts"){
+  field(DESC, "Source 2 power down status")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+  field(DTYP, "stream")
+  field(INP, "@valon5009.proto inPwrDown2 $(PORT)")
+}

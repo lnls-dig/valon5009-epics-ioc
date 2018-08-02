@@ -1,0 +1,7 @@
+#RELEASE Location of external products
+# Run "gnumake clean uninstall install" in the application
+# top directory each time this file is changed.
+
+# The path of external modules should be provided in RELEASE.local
+# The file RELEASE.local.example is an example of how the RELEASE.local file should look like
+-include $(TOP)/configure/RELEASE.local

@@ -1,0 +1,22 @@
+[Unit]
+Description=VALON IOC %p%I
+After=rc-local.service
+Wants=rc-local.service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+# Source environment
+EnvironmentFile=/etc/sysconfig/valon5009-epics-ioc
+EnvironmentFile=/etc/sysconfig/valon5009-epics-ioc-mapping
+# Execute pre with root
+PermissionsStartOnly=true
+Environment=VALON_INSTANCE=%i
+ExecStartPre=/bin/mkdir -p /var/log/procServ/%p%i
+ExecStartPre=/bin/mkdir -p /var/run/procServ/%p%i
+WorkingDirectory=<INSTALL_PREFIX>/<IOC_NAME>/iocBoot/iocValon5009
+# Run procServ with IOC
+ExecStart="/usr/local/bin/runValon5009.sh"
+
+[Install]
+WantedBy=multi-user.target

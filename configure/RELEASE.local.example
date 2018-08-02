@@ -1,0 +1,7 @@
+# This file exemplifies how to write the RELEASE.local file
+
+SUPPORT=/opt/epics/synApps_5_8/support
+EPICS_BASE=/opt/epics/base
+
+# Specify the standard synApps configuration.
+include $(SUPPORT)/configure/RELEASE
