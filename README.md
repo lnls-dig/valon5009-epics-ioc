@@ -24,7 +24,7 @@ where `PORT` is the local serial port to which the device is connected. The opti
 that you can specify (after `./runValon5009.sh`) are:
 
 - `-t TELNET_PORT`: telnet port to use for connecting to procServ
-- `-p `PORT`: device port to connect to (required)
+- `-p `PORT`: serial port to connect to device (required)
 - `-P PREFIX1`: the value of the EPICS `$(P)` macro used to prefix the PV names
 - `-R PREFIX2`: the value of the EPICS `$(R)` macro used to prefix the PV names
 
