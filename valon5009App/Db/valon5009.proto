@@ -292,50 +292,50 @@ inAmpEnbl2 {
 ######################################################################
 # Power source down
 
-outPwrDown1 {
+outPwrOn1 {
     out "S1";
     in "";
-    out "PDN %{0|1}";
+    out "PDN %{1|0}";
     in "";
-    in "PDN %*{0|1}";
+    in "PDN %*i";
 }
 
-outPwrDown2 {
+outPwrOn2 {
     out "S2";
     in "";
-    out "PDN %{0|1}";
+    out "PDN %{1|0}";
     in "";
-    in "PDN %*{0|1}";
+    in "PDN %*i";
 }
 
-inPwrDown1 {
+inPwrOn1 {
       out "S1";
       in "";
       out "PDN?";
       in "";
-      in "PDN %i";
+      in "PDN %{1|0}";
 
     @init{
       out "S1";
       in "";
       out "PDN?";
       in "";
-      in "PDN %i";
+      in "PDN %{1|0}";
     }
 }
 
-inPwrDown2 {
+inPwrOn2 {
       out "S2";
       in "";
       out "PDN?";
       in "";
-      in "PDN %i";
+      in "PDN %{1|0}";
 
     @init{
       out "S2";
       in "";
       out "PDN?";
       in "";
-      in "PDN %i";
+      in "PDN %{1|0}";
     }
 }

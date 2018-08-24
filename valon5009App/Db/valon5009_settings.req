@@ -21,5 +21,5 @@ $(P)$(R)Src1EnblBuffAmp-Sel
 $(P)$(R)Src2EnblBuffAmp-Sel
 
 # Power Down Source
-$(P)$(R)Src1PwrDown-Sel
-$(P)$(R)Src2PwrDown-Sel
+$(P)$(R)Src1PwrOn-Sel
+$(P)$(R)Src2PwrOn-Sel

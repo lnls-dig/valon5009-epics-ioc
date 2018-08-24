@@ -280,36 +280,36 @@ record(bi, "$(P)$(R)Src2EnblBuffAmp-Sts"){
 
 # Power Down Source
 
-record(bo, "$(P)$(R)Src1PwrDown-Sel"){
-  field(DESC, "Power down source 1")
+record(bo, "$(P)$(R)Src1PwrOn-Sel"){
+  field(DESC, "Power on source 1")
   field(ZNAM, "Off")
   field(ONAM, "On")
   field(DTYP, "stream")
-  field(OUT, "@valon5009.proto outPwrDown1 $(PORT)")
-  field(FLNK, "$(P)$(R)Src1PwrDown-Sts")
+  field(OUT, "@valon5009.proto outPwrOn1 $(PORT)")
+  field(FLNK, "$(P)$(R)Src1PwrOn-Sts")
 }
 
-record(bi , "$(P)$(R)Src1PwrDown-Sts"){
-  field(DESC, "Source 1 power down status")
+record(bi , "$(P)$(R)Src1PwrOn-Sts"){
+  field(DESC, "Source 1 power status")
   field(ZNAM, "Off")
   field(ONAM, "On")
   field(DTYP, "stream")
-  field(INP, "@valon5009.proto inPwrDown1 $(PORT)")
+  field(INP, "@valon5009.proto inPwrOn1 $(PORT)")
 }
 
-record(bo, "$(P)$(R)Src2PwrDown-Sel"){
-  field(DESC, "Power down source 2")
+record(bo, "$(P)$(R)Src2PwrOn-Sel"){
+  field(DESC, "Power on source 2")
   field(ZNAM, "Off")
   field(ONAM, "On")
   field(DTYP, "stream")
-  field(OUT, "@valon5009.proto outPwrDown2 $(PORT)")
-  field(FLNK, "$(P)$(R)Src2PwrDown-Sts")
+  field(OUT, "@valon5009.proto outPwrOn2 $(PORT)")
+  field(FLNK, "$(P)$(R)Src2PwrOn-Sts")
 }
 
-record(bi , "$(P)$(R)Src2PwrDown-Sts"){
-  field(DESC, "Source 2 power down status")
+record(bi , "$(P)$(R)Src2PwrOn-Sts"){
+  field(DESC, "Source 2 power on status")
   field(ZNAM, "Off")
   field(ONAM, "On")
   field(DTYP, "stream")
-  field(INP, "@valon5009.proto inPwrDown2 $(PORT)")
+  field(INP, "@valon5009.proto inPwrOn2 $(PORT)")
 }
