@@ -31,17 +31,17 @@ record(calcout, "$(P)$(R)ValidRst"){
 
 # Save params to flash
 
-record(bo, "$(P)$(R)Save-Cmd"){
+record(bo, "$(P)$(R)SaveToFlash-Cmd"){
   field(DESC, "Save params to flash")
   field(ZNAM, "Off")
   field(ONAM, "On")
   field(HIGH, "0.5")
-  field(FLNK, "$(P)$(R)ValidSave")
+  field(FLNK, "$(P)$(R)ValidSaveToFlash")
 }
 
-record(calcout, "$(P)$(R)ValidSave"){
+record(calcout, "$(P)$(R)ValidSaveToFlash"){
   field(DESC, "Validate save params command")
-  field(INPA, "$(P)$(R)Save-Cmd")
+  field(INPA, "$(P)$(R)SaveToFlash-Cmd")
   field(CALC, "A")
   field(OOPT, "When Non-zero")
   field(DTYP, "stream")
