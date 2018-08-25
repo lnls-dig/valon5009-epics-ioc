@@ -29,6 +29,23 @@ record(calcout, "$(P)$(R)ValidRst"){
   field(OUT, "@valon5009.proto outRst $(PORT)")
 }
 
+# Restore configurations from Flash
+record(bo, "$(P)$(R)RecallConfig-Cmd"){
+  field(DESC, "Restore config from flash")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+  field(FLNK, "$(P)$(R)ValidRecallConfig")
+}
+
+record(calcout, "$(P)$(R)ValidRecallConfig"){
+  field(DESC, "Validate recall command")
+  field(INPA, "$(P)$(R)RecallConfig-Cmd")
+  field(CALC, "A")
+  field(OOPT, "When Non-zero")
+  field(DTYP, "stream")
+  field(OUT, "@valon5009.proto outRecall $(PORT)")
+}
+
 # Save params to flash
 
 record(bo, "$(P)$(R)SaveToFlash-Cmd"){

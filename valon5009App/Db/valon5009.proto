@@ -12,6 +12,13 @@ outRst {
 }
 
 ######################################################################
+# Recall synthesizer state from flash memory
+
+outRecall {
+    out "RCL";
+}
+
+######################################################################
 # Save channel config to flash
 
 # Save twice using different src1 names, so that no msg
