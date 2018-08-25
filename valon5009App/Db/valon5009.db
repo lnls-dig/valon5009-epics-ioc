@@ -90,12 +90,22 @@ record(ai, "$(P)$(R)Src2Freq-RB"){
 
 # Frequency Offset
 
+# limit offset so that output freq 
+# is not greater than max freq
+record(calcout, "$(P)$(R)Src1FreqOffsetLimit"){
+  field(DESC, "Keep updating offset 1 high limit")
+  field(INPA, "$(P)$(R)Src1Freq-RB CPP")
+  field(INPB, "$(P)$(R)Src1Freq-RB.DRVH CPP")
+  field(CALC, "B-A")
+  field(OUT, "$(P)$(R)Src1FreqOffset-SP.DRVH")
+}
+
 record(ao, "$(P)$(R)Src1FreqOffset-SP"){
   field(DESC, "Source 1 frequency offset")
   field(DTYP, "stream")
   field(PREC, "6")
   field(DRVH, "6000")
-  field(DRVL, "23.5")
+  field(DRVL, "0")
   field(EGU, "MHz")
   field(OUT, "@valon5009.proto outOffset1 $(PORT)")
   field(FLNK, "$(P)$(R)Src1FreqOffset-RB")
@@ -109,12 +119,22 @@ record(ai, "$(P)$(R)Src1FreqOffset-RB"){
   field(INP, "@valon5009.proto inOffset1 $(PORT)")
 }
 
+# limit offset so that output freq 
+# is not greater than max freq
+record(calcout, "$(P)$(R)Src2FreqOffsetLimit"){
+  field(DESC, "Keep updating offset 2 high limit")
+  field(INPA, "$(P)$(R)Src2Freq-RB CPP")
+  field(INPB, "$(P)$(R)Src2Freq-RB.DRVH CPP")
+  field(CALC, "B-A")
+  field(OUT, "$(P)$(R)Src2FreqOffset-SP.DRVH")
+}
+
 record(ao, "$(P)$(R)Src2FreqOffset-SP"){
   field(DESC, "Source 2 frequency offset")
   field(DTYP, "stream")
   field(PREC, "6")
   field(DRVH, "6000")
-  field(DRVL, "23.5")
+  field(DRVL, "0")
   field(EGU, "MHz")
   field(OUT, "@valon5009.proto outOffset2 $(PORT)")
   field(FLNK, "$(P)$(R)Src2FreqOffset-RB")
