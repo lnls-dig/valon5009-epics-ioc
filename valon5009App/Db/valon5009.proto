@@ -302,7 +302,7 @@ inAmpEnbl2 {
 outPwrOn1 {
     out "S1";
     in "";
-    out "PDN %{1|0}";
+    out "PDN %{0|1}";
     in "";
     in "PDN %*i";
 }
@@ -310,7 +310,7 @@ outPwrOn1 {
 outPwrOn2 {
     out "S2";
     in "";
-    out "PDN %{1|0}";
+    out "PDN %{0|1}";
     in "";
     in "PDN %*i";
 }
@@ -320,14 +320,14 @@ inPwrOn1 {
       in "";
       out "PDN?";
       in "";
-      in "PDN %{1|0}";
+      in "PDN %{0|1}";
 
     @init{
       out "S1";
       in "";
       out "PDN?";
       in "";
-      in "PDN %{1|0}";
+      in "PDN %{0|1}";
     }
 }
 
@@ -336,13 +336,13 @@ inPwrOn2 {
       in "";
       out "PDN?";
       in "";
-      in "PDN %{1|0}";
+      in "PDN %{0|1}";
 
     @init{
       out "S2";
       in "";
       out "PDN?";
       in "";
-      in "PDN %{1|0}";
+      in "PDN %{0|1}";
     }
 }
