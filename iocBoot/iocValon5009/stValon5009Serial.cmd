@@ -10,12 +10,12 @@ epicsEnvSet("STREAM_PROTOCOL_PATH", "$(TOP)/valon5009App/Db")
 dbLoadDatabase("$(TOP)/dbd/valon5009.dbd",0,0)
 valon5009_registerRecordDeviceDriver pdbbase
 
-## Load record instances
-dbLoadRecords("${TOP}/db/valon5009.db", "P=$(P), R=$(R), PORT=$(PORT)")
-
 # Create the asyn port for serial communication
 drvAsynSerialPortConfigure("$(PORT)","$(PORT)", 0, 0, 0)
 asynSetOption("$(PORT)", 0, "baud", "9600")
+
+## Load record instances
+dbLoadRecords("${TOP}/db/valon5009.db", "P=$(P), R=$(R), PORT=$(PORT)")
 
 < save_restore.cmd
 
