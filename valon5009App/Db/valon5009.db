@@ -389,7 +389,7 @@ record(ai, "$(P)$(R)RefFreq-RB"){
   field(LSV, "MINOR")
   field(EGU, "MHz")
   field(DTYP, "stream")
-  field(OUT, "@valon5009.proto inRefFreq $(PORT)")
+  field(INP, "@valon5009.proto inRefFreq $(PORT)")
 }
 
 # Reference Frequency Trimming
@@ -414,7 +414,7 @@ record(bo, "$(P)$(R)RefSrcType-Sel"){
   field(DESC, "Reference source type")
   field(ZNAM, "Internal")
   field(ONAM, "External")
-  field(VAL, "Internal")
+  field(VAL, "0")
   field(DTYP, "stream")
   field(OUT, "@valon5009.proto outRefSrcType $(PORT)")
 }
