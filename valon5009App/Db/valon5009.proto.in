@@ -1,8 +1,9 @@
 ######################################################################
 # General setup
 
-Terminator = "\r\n";
+Terminator = "<TERMINATOR>";
 ExtraInput = Ignore;
+ReplyTimeout = <REPLY_TIMEOUT>;
 
 ######################################################################
 # Reset to factory settings
@@ -22,7 +23,7 @@ outRecall {
 # Save channel config to flash
 
 # Save twice using different src1 names, so that no msg
-# is displayed informing that the configuration 
+# is displayed informing that the configuration
 # has not changed, which is difficult to deal with
 # in Stream Device.
 
