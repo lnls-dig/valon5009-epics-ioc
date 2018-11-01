@@ -42,6 +42,7 @@ include $(TOP)/configure/RULES
 
 valon5009_DBD += asyn.dbd
 valon5009_DBD += drvAsynSerialPort.dbd
+valon5009_DBD += drvAsynIPPort.dbd
 valon5009_DBD += stream.dbd
 valon5009_DBD += calcSupport.dbd
 valon5009_DBD += asSupport.dbd

@@ -7,8 +7,7 @@
 ############################################################
 # GENERAL
 #
-# Desc: General parameters to control the device main
-#       features.
+# Desc: General parameters to control the device.
 
 # Reset
 
@@ -64,6 +63,11 @@ record(calcout, "$(P)$(R)ValidSaveToFlash"){
   field(DTYP, "stream")
   field(OUT, "@valon5009.proto save $(PORT)")
 }
+
+############################################################
+# FREQUENCY
+#
+# Desc: Frequency related parameters.
 
 # Frequency
 
@@ -164,6 +168,11 @@ record(ai, "$(P)$(R)Src2FreqOffset-RB"){
   field(EGU, "MHz")
   field(INP, "@valon5009.proto inOffset2 $(PORT)")
 }
+
+############################################################
+# POWER AND ATTENUATOR
+#
+# Desc: General parameters to control the device.
 
 # Attenuator
 
@@ -350,3 +359,189 @@ record(bi , "$(P)$(R)Src2PwrOn-Sts"){
   field(DTYP, "stream")
   field(INP, "@valon5009.proto inPwrOn2 $(PORT)")
 }
+
+############################################################
+# REFERENCE
+#
+# Desc: General parameters to control the device.
+
+# Reference Frequency
+# (must be set to the actual reference value used)
+
+record(ao, "$(P)$(R)RefFreq-SP"){
+  field(DESC, "Reference freq for both srcs")
+  field(DRVH, "5")
+  field(DRVL, "200")
+  field(HIGH, "100")  # The optimum range for the ref freq is 20 MHz to 100 MHz
+  field(LOW, "20")
+  field(HSV, "MINOR")
+  field(LSV, "MINOR")
+  field(EGU, "MHz")
+  field(DTYP, "stream")
+  field(OUT, "@valon5009.proto outRefFreq $(PORT)")
+}
+
+record(ai, "$(P)$(R)RefFreq-RB"){
+  field(DESC, "Reference freq for both srcs")
+  field(HIGH, "100")  # The optimum range for the ref freq is 20 MHz to 100 MHz
+  field(LOW, "20")
+  field(HSV, "MINOR")
+  field(LSV, "MINOR")
+  field(EGU, "MHz")
+  field(DTYP, "stream")
+  field(INP, "@valon5009.proto inRefFreq $(PORT)")
+}
+
+# Reference Frequency Trimming
+
+record(longout, "$(P)$(R)RefTrim-SP"){
+  field(DESC, "Trim reference freq")
+  field(DRVH, "255")
+  field(DRVL, "0")
+  field(DTYP, "stream")
+  field(OUT, "@valon5009.proto outRefTrim $(PORT)")
+}
+
+record(longin, "$(P)$(R)RefTrim-RB"){
+  field(DESC, "Trim reference freq RB")
+  field(DTYP, "stream")
+  field(INP, "@valon5009.proto inRefTrim $(PORT)")
+}
+
+# Reference Source Type
+
+record(bo, "$(P)$(R)RefSrcType-Sel"){
+  field(DESC, "Reference source type")
+  field(ZNAM, "Internal")
+  field(ONAM, "External")
+  field(VAL, "0")
+  field(DTYP, "stream")
+  field(OUT, "@valon5009.proto outRefSrcType $(PORT)")
+}
+
+record(bi, "$(P)$(R)RefSrcType-Sts"){
+  field(DESC, "Reference source type Sts")
+  field(ZNAM, "Internal")
+  field(ONAM, "External")
+  field(DTYP, "stream")
+  field(INP, "@valon5009.proto inRefSrcType $(PORT)")
+}
+
+# Reference PDF (Phase/ Frequency Detector)
+
+record(ao, "$(P)$(R)Src1PFD-SP"){
+  field(DESC, "Src 1 phase/freq detector set point")
+  field(DRVH, "140")
+  field(DRVL, "1")
+  field(HIGH, "50")  # The optimum range for the ref freq is 20 MHz to 50 MHz
+  field(LOW, "20")
+  field(HSV, "MINOR")
+  field(LSV, "MINOR")
+  field(EGU, "MHz")
+  field(DTYP, "stream")
+  field(OUT, "@valon5009.proto outSrc1PFD $(PORT)")
+}
+
+record(ai, "$(P)$(R)Src1PFD-RB"){
+  field(DESC, "Src 1 phase/freq detector set point RB")
+  field(HIGH, "50")  # The optimum range for the ref freq is 20 MHz to 50 MHz
+  field(LOW, "20")
+  field(HSV, "MINOR")
+  field(LSV, "MINOR")
+  field(EGU, "MHz")
+  field(DTYP, "stream")
+  field(INP, "@valon5009.proto inSrc1PFD $(PORT)")
+}
+
+record(ao, "$(P)$(R)Src2PFD-SP"){
+  field(DESC, "Src 2 phase/freq detector set point")
+  field(DRVH, "140")
+  field(DRVL, "1")
+  field(HIGH, "50")  # The optimum range for the ref freq is 20 MHz to 50 MHz
+  field(LOW, "20")
+  field(HSV, "MINOR")
+  field(LSV, "MINOR")
+  field(EGU, "MHz")
+  field(DTYP, "stream")
+  field(OUT, "@valon5009.proto outSrc2PFD $(PORT)")
+}
+
+record(ai, "$(P)$(R)Src2PFD-RB"){
+  field(DESC, "Src 2 phase/freq detector set point RB")
+  field(HIGH, "50")  # The optimum range for the ref freq is 20 MHz to 50 MHz
+  field(LOW, "20")
+  field(HSV, "MINOR")
+  field(LSV, "MINOR")
+  field(EGU, "MHz")
+  field(DTYP, "stream")
+  field(INP, "@valon5009.proto inSrc2PFD $(PORT)")
+}
+
+# Reference Doubler
+
+record(bo, "$(P)$(R)Src1RefDoubler-Sel"){
+  field(DESC, "Enable src 1 reference doubler")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+  field(DTYP, "stream")
+  field(OUT, "@valon5009.proto outSrc1RefDoubler $(PORT)")
+}
+
+record(bi, "$(P)$(R)Src1RefDoubler-Sts"){
+  field(DESC, "Src 1 reference doubler enable Sts")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+  field(DTYP, "stream")
+  field(INP, "@valon5009.proto inSrc1RefDoubler $(PORT)")
+}
+
+record(bo, "$(P)$(R)Src2RefDoubler-Sel"){
+  field(DESC, "Enable src 2 reference doubler")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+  field(DTYP, "stream")
+  field(OUT, "@valon5009.proto outSrc2RefDoubler $(PORT)")
+}
+
+record(bi, "$(P)$(R)Src2RefDoubler-Sts"){
+  field(DESC, "Src 2 reference doubler enable Sts")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+  field(DTYP, "stream")
+  field(INP, "@valon5009.proto inSrc2RefDoubler $(PORT)")
+}
+
+# Reference Divider
+
+record(bo, "$(P)$(R)Src1RefDivider-Sel"){
+  field(DESC, "Enable src 1 reference divider")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+  field(DTYP, "stream")
+  field(OUT, "@valon5009.proto outSrc1RefDivider $(PORT)")
+}
+
+record(bi, "$(P)$(R)Src1RefDivider-Sts"){
+  field(DESC, "Src 1 reference divider enable Sts")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+  field(DTYP, "stream")
+  field(INP, "@valon5009.proto inSrc1RefDivider $(PORT)")
+}
+
+record(bo, "$(P)$(R)Src2RefDivider-Sel"){
+  field(DESC, "Enable src 2 reference divider")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+  field(DTYP, "stream")
+  field(OUT, "@valon5009.proto outSrc2RefDivider $(PORT)")
+}
+
+record(bi, "$(P)$(R)Src2RefDivider-Sts"){
+  field(DESC, "Src 2 reference divider enable Sts")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+  field(DTYP, "stream")
+  field(INP, "@valon5009.proto inSrc2RefDivider $(PORT)")
+}
+

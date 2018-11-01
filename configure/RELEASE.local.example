@@ -1,6 +1,6 @@
 # This file exemplifies how to write the RELEASE.local file
 
-SUPPORT=/opt/epics/synApps_5_8/support
+SUPPORT=/opt/epics/synApps-lnls-R1-0-0/support
 EPICS_BASE=/opt/epics/base
 
 # Specify the standard synApps configuration.

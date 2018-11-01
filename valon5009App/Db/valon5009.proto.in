@@ -1,8 +1,9 @@
 ######################################################################
 # General setup
 
-Terminator = "\r\n";
+Terminator = "<TERMINATOR>";
 ExtraInput = Ignore;
+ReplyTimeout = <REPLY_TIMEOUT>;
 
 ######################################################################
 # Reset to factory settings
@@ -22,7 +23,7 @@ outRecall {
 # Save channel config to flash
 
 # Save twice using different src1 names, so that no msg
-# is displayed informing that the configuration 
+# is displayed informing that the configuration
 # has not changed, which is difficult to deal with
 # in Stream Device.
 
@@ -346,3 +347,220 @@ inPwrOn2 {
       in "PDN %{0|1}";
     }
 }
+
+######################################################################
+# Reference Frequency
+
+outRefFreq{
+    out "REF %f m";
+    in "";
+    in "REF %*f";
+}
+
+inRefFreq{
+    out "REF? m";
+    in "";
+    in "REF %f";
+
+    @init{
+      out "REF? m";
+      in "";
+      in "REF %f";
+    }
+}
+
+######################################################################
+# Reference Trimming
+
+outRefTrim{
+    out "REFT %i";
+    in "";
+    in "REFTrim %*i";
+}
+
+inRefTrim{
+    out "REFT?";
+    in "";
+    in "REFTrim %i";
+
+    @init{
+      out "REFT?";
+      in "";
+      in "REFTrim %i";
+    }
+}
+
+######################################################################
+# Reference Source
+
+outRefSrcType{
+    out "REFS %i";
+    in "";
+    in "REFS %*i";
+}
+
+inRefSrcType{
+    out "REFS?";
+    in "";
+    in "REFS %i";
+
+    @init{
+      out "REFS?";
+      in "";
+      in "REFS %i";
+    }
+}
+
+######################################################################
+# Phase/Frequency Detector Set Point
+
+outSrc1PFD{
+    out "S1";
+    in "";
+    out "PFD %f m";
+    in "";
+    in "PFD %*f";
+}
+
+outSrc2PFD{
+    out "S2";
+    in "";
+    out "PFD %f m";
+    in "";
+    in "PFD %*f";
+}
+
+inSrc1PFD{
+    out "S1";
+    in "";
+    out "PFD? m";
+    in "";
+    in "PFD %f";
+
+    @init{
+      out "S1";
+      in "";
+      out "PFD? m";
+      in "";
+      in "PFD %f";
+    }
+}
+
+inSrc2PFD{
+    out "S2";
+    in "";
+    out "PFD? m";
+    in "";
+    in "PFD %f";
+
+    @init{
+      out "S2";
+      in "";
+      out "PFD? m";
+      in "";
+      in "PFD %f";
+    }
+}
+
+######################################################################
+# Reference Doubler Enable
+
+outSrc1RefDoubler{
+    out "S1";
+    in "";
+    out "REFDB %{0|1}";
+    in "";
+    in "REFDB %*{0|1}";
+}
+
+outSrc2RefDoubler{
+    out "S2";
+    in "";
+    out "REFDB %{0|1}";
+    in "";
+    in "REFDB %*{0|1}";
+}
+
+inSrc1RefDoubler{
+    out "S1";
+    in "";
+    out "REFDB?";
+    in "";
+    in "REFDB %{0|1}";
+
+    @init{
+      out "S1";
+      in "";
+      out "REFDB?";
+      in "";
+      in "REFDB %{0|1}";
+    }
+}
+
+inSrc2RefDoubler{
+    out "S2";
+    in "";
+    out "REFDB?";
+    in "";
+    in "REFDB %{0|1}";
+
+    @init{
+      out "S2";
+      in "";
+      out "REFDB?";
+      in "";
+      in "REFDB %{0|1}";
+    }
+}
+
+######################################################################
+# Reference Divider Enable
+
+outSrc1RefDivider{
+    out "S1";
+    in "";
+    out "REFDIV %{0|1}";
+    in "";
+    in "REFDIV %*{0|1}";
+}
+
+outSrc2RefDivider{
+    out "S2";
+    in "";
+    out "REFDIV %{0|1}";
+    in "";
+    in "REFDIV %*{0|1}";
+}
+
+inSrc1RefDivider{
+    out "S1";
+    in "";
+    out "REFDIV?";
+    in "";
+    in "REFDIV %{0|1}";
+
+    @init{
+      out "S1";
+      in "";
+      out "REFDIV?";
+      in "";
+      in "REFDIV %{0|1}";
+    }
+}
+
+inSrc2RefDivider{
+    out "S2";
+    in "";
+    out "REFDIV?";
+    in "";
+    in "REFDIV %{0|1}";
+
+    @init{
+      out "S2";
+      in "";
+      out "REFDIV?";
+      in "";
+      in "REFDIV %{0|1}";
+    }
+}
+
