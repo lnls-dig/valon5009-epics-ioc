@@ -149,7 +149,7 @@ $(pv_value)</tooltip>
       <color red="192" green="192" blue="192" />
     </foreground_color>
     <height>151</height>
-    <lock_children>false</lock_children>
+    <lock_children>true</lock_children>
     <macros>
       <include_parent_macros>true</include_parent_macros>
     </macros>
@@ -254,6 +254,7 @@ $(pv_value)</tooltip>
         <color red="192" green="192" blue="192" />
       </foreground_color>
       <height>31</height>
+      <labels_from_pv>false</labels_from_pv>
       <name>Boolean Button_1</name>
       <off_color>
         <color red="140" green="95" blue="95" />
@@ -395,6 +396,7 @@ $(pv_value)</tooltip>
         <color red="192" green="192" blue="192" />
       </foreground_color>
       <height>31</height>
+      <labels_from_pv>false</labels_from_pv>
       <name>Boolean Button_1</name>
       <off_color>
         <color red="0" green="100" blue="0" />
@@ -497,6 +499,7 @@ $(pv_value)</tooltip>
         <color red="192" green="192" blue="192" />
       </foreground_color>
       <height>31</height>
+      <labels_from_pv>false</labels_from_pv>
       <name>Boolean Button_2</name>
       <off_color>
         <color red="0" green="100" blue="0" />
@@ -957,7 +960,7 @@ $(pv_value)</tooltip>
       </font>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <foreground_color>
-        <color red="192" green="192" blue="192" />
+        <color red="0" green="0" blue="0" />
       </foreground_color>
       <format_type>0</format_type>
       <height>25</height>
@@ -1014,7 +1017,7 @@ $(pv_value)</tooltip>
       </font>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <foreground_color>
-        <color red="192" green="192" blue="192" />
+        <color red="0" green="0" blue="0" />
       </foreground_color>
       <format_type>0</format_type>
       <height>25</height>
@@ -1215,7 +1218,7 @@ $(pv_value)</tooltip>
       </font>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <foreground_color>
-        <color red="192" green="192" blue="192" />
+        <color red="0" green="0" blue="0" />
       </foreground_color>
       <format_type>0</format_type>
       <height>25</height>
@@ -1364,6 +1367,7 @@ $(pv_value)</tooltip>
         <color red="192" green="192" blue="192" />
       </foreground_color>
       <height>31</height>
+      <labels_from_pv>false</labels_from_pv>
       <name>Boolean Button_2</name>
       <off_color>
         <color red="0" green="100" blue="0" />
@@ -1524,6 +1528,7 @@ $(pv_value)</tooltip>
         <color red="192" green="192" blue="192" />
       </foreground_color>
       <height>31</height>
+      <labels_from_pv>false</labels_from_pv>
       <name>Boolean Button_1</name>
       <off_color>
         <color red="0" green="100" blue="0" />
@@ -1717,7 +1722,7 @@ $(pv_value)</tooltip>
       <color red="192" green="192" blue="192" />
     </foreground_color>
     <height>276</height>
-    <lock_children>false</lock_children>
+    <lock_children>true</lock_children>
     <macros>
       <include_parent_macros>true</include_parent_macros>
     </macros>
@@ -2488,6 +2493,7 @@ $(pv_value)</tooltip>
         <color red="192" green="192" blue="192" />
       </foreground_color>
       <height>31</height>
+      <labels_from_pv>false</labels_from_pv>
       <name>Boolean Button_2</name>
       <off_color>
         <color red="0" green="100" blue="0" />
@@ -2648,6 +2654,7 @@ $(pv_value)</tooltip>
         <color red="192" green="192" blue="192" />
       </foreground_color>
       <height>31</height>
+      <labels_from_pv>false</labels_from_pv>
       <name>Boolean Button_1</name>
       <off_color>
         <color red="0" green="100" blue="0" />
@@ -3852,6 +3859,7 @@ $(pv_value)</tooltip>
         <color red="192" green="192" blue="192" />
       </foreground_color>
       <height>31</height>
+      <labels_from_pv>false</labels_from_pv>
       <name>Boolean Button_3</name>
       <off_color>
         <color red="0" green="100" blue="0" />
@@ -4012,6 +4020,7 @@ $(pv_value)</tooltip>
         <color red="192" green="192" blue="192" />
       </foreground_color>
       <height>31</height>
+      <labels_from_pv>false</labels_from_pv>
       <name>Boolean Button_4</name>
       <off_color>
         <color red="0" green="100" blue="0" />
@@ -4172,6 +4181,7 @@ $(pv_value)</tooltip>
         <color red="192" green="192" blue="192" />
       </foreground_color>
       <height>31</height>
+      <labels_from_pv>false</labels_from_pv>
       <name>Boolean Button_5</name>
       <off_color>
         <color red="0" green="100" blue="0" />
