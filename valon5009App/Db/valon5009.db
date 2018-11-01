@@ -379,6 +379,7 @@ record(ao, "$(P)$(R)RefFreq-SP"){
   field(EGU, "MHz")
   field(DTYP, "stream")
   field(OUT, "@valon5009.proto outRefFreq $(PORT)")
+  field(FLNK, "$(P)$(R)RefFreq-RB")
 }
 
 record(ai, "$(P)$(R)RefFreq-RB"){
@@ -400,6 +401,7 @@ record(longout, "$(P)$(R)RefTrim-SP"){
   field(DRVL, "0")
   field(DTYP, "stream")
   field(OUT, "@valon5009.proto outRefTrim $(PORT)")
+  field(FLNK, "$(P)$(R)RefTrim-RB")
 }
 
 record(longin, "$(P)$(R)RefTrim-RB"){
@@ -417,6 +419,7 @@ record(bo, "$(P)$(R)RefSrcType-Sel"){
   field(VAL, "0")
   field(DTYP, "stream")
   field(OUT, "@valon5009.proto outRefSrcType $(PORT)")
+  field(FLNK, "$(P)$(R)RefSrcType-Sts")
 }
 
 record(bi, "$(P)$(R)RefSrcType-Sts"){
@@ -440,6 +443,7 @@ record(ao, "$(P)$(R)Src1PFD-SP"){
   field(EGU, "MHz")
   field(DTYP, "stream")
   field(OUT, "@valon5009.proto outSrc1PFD $(PORT)")
+  field(FLNK, "$(P)$(R)Src1PFD-RB")
 }
 
 record(ai, "$(P)$(R)Src1PFD-RB"){
@@ -464,6 +468,7 @@ record(ao, "$(P)$(R)Src2PFD-SP"){
   field(EGU, "MHz")
   field(DTYP, "stream")
   field(OUT, "@valon5009.proto outSrc2PFD $(PORT)")
+  field(FLNK, "$(P)$(R)Src2PFD-RB")
 }
 
 record(ai, "$(P)$(R)Src2PFD-RB"){
@@ -485,6 +490,7 @@ record(bo, "$(P)$(R)Src1RefDoubler-Sel"){
   field(ONAM, "On")
   field(DTYP, "stream")
   field(OUT, "@valon5009.proto outSrc1RefDoubler $(PORT)")
+  field(FLNK, "$(P)$(R)Src1RefDoubler-Sts")
 }
 
 record(bi, "$(P)$(R)Src1RefDoubler-Sts"){
@@ -501,6 +507,7 @@ record(bo, "$(P)$(R)Src2RefDoubler-Sel"){
   field(ONAM, "On")
   field(DTYP, "stream")
   field(OUT, "@valon5009.proto outSrc2RefDoubler $(PORT)")
+  field(FLNK, "$(P)$(R)Src2RefDoubler-Sts")
 }
 
 record(bi, "$(P)$(R)Src2RefDoubler-Sts"){
@@ -519,6 +526,7 @@ record(bo, "$(P)$(R)Src1RefDivider-Sel"){
   field(ONAM, "On")
   field(DTYP, "stream")
   field(OUT, "@valon5009.proto outSrc1RefDivider $(PORT)")
+  field(FLNK, "$(P)$(R)Src1RefDivider-Sts")
 }
 
 record(bi, "$(P)$(R)Src1RefDivider-Sts"){
@@ -535,6 +543,7 @@ record(bo, "$(P)$(R)Src2RefDivider-Sel"){
   field(ONAM, "On")
   field(DTYP, "stream")
   field(OUT, "@valon5009.proto outSrc2RefDivider $(PORT)")
+  field(FLNK, "$(P)$(R)Src2RefDivider-Sts")
 }
 
 record(bi, "$(P)$(R)Src2RefDivider-Sts"){
