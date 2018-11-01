@@ -10,10 +10,10 @@ usage () {
     echo "  -t                  Configure procServ telnet port" >&2
     echo "  -P                  Configure value of \$(P) macro" >&2
     echo "  -R                  Configure value of \$(R) macro" >&2
-    echo "  -d                  Configure Device type [Eth|Serial]" >&2
-    echo "  -i                  Configure IP address to connect to device [only for Eth]" >&2
-    echo "  -p                  Configure IP port number to connect to device [only for Eth]" >&2
-    echo "  -s                  Configure Serial port to device [only for Serial]" >&2
+    echo "  -d                  Configure Device type [UserPortEth|USBSerial]" >&2
+    echo "  -i                  Configure IP address to connect to device [only for UserPortEth]" >&2
+    echo "  -p                  Configure IP port number to connect to device [only for UserPortEth]" >&2
+    echo "  -s                  Configure Serial port to device [only for USBSerial]" >&2
 }
 
 while getopts ":t:P:R:i:p:s:d:" opt; do
