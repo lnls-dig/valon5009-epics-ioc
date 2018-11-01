@@ -111,7 +111,7 @@ record(ai, "$(P)$(R)Src2Freq-RB"){
 
 # Frequency Offset
 
-# limit offset so that output freq 
+# limit offset so that output freq
 # is not greater than max freq
 record(calcout, "$(P)$(R)Src1FreqOffsetLimit"){
   field(DESC, "Keep updating offset 1 high limit")
@@ -140,7 +140,7 @@ record(ai, "$(P)$(R)Src1FreqOffset-RB"){
   field(INP, "@valon5009.proto inOffset1 $(PORT)")
 }
 
-# limit offset so that output freq 
+# limit offset so that output freq
 # is not greater than max freq
 record(calcout, "$(P)$(R)Src2FreqOffsetLimit"){
   field(DESC, "Keep updating offset 2 high limit")
