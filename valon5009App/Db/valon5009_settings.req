@@ -23,3 +23,20 @@ $(P)$(R)Src2EnblBuffAmp-Sel
 # Power Down Source
 $(P)$(R)Src1PwrOn-Sel
 $(P)$(R)Src2PwrOn-Sel
+
+# Reference settings
+$(P)$(R)RefFreq-SP
+$(P)$(R)RefTrim-SP
+$(P)$(R)RefSrcType-Sel
+
+# Reference PFD
+$(P)$(R)Src1PFD-SP
+$(P)$(R)Src2PFD-SP
+
+# Reference Doubler
+$(P)$(R)Src1RefDoubler-Sel
+$(P)$(R)Src2RefDoubler-Sel
+
+# Reference Divider
+$(P)$(R)Src1RefDivider-Sel
+$(P)$(R)Src2RefDivider-Sel
