@@ -24,7 +24,7 @@ while getopts ":t:P:R:i:p:s:d:" opt; do
     i) IPADDR="$OPTARG" ;;
     p) IPPORT="$OPTARG" ;;
     s) SERIALPORT="$OPTARG" ;;
-    d) DEVICE="$OPTARG" ;;
+    d) DEVICE_TYPE="$OPTARG" ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
       usage $0

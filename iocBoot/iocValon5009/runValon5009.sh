@@ -15,17 +15,17 @@ if [ $? -ne 0 ]; then
 	exit 1
 fi
 
-if [ -z "${DEVICE}" ]; then
-    echo "Device not set. Please use -d option or set \$DEVICE environment variable" >&2
+if [ -z "${DEVICE_TYPE}" ]; then
+    echo "Device not set. Please use -d option or set \$DEVICE_TYPE environment variable" >&2
     exit 3
 fi
 
-if [ "${DEVICE}" = "UserPortEth" ] && [ -z "${IPADDR}" ]; then
+if [ "${DEVICE_TYPE}" = "UserPortEth" ] && [ -z "${IPADDR}" ]; then
     echo "IP address not set. Please use -i option or set \$IPADDR environment variable" >&2
     exit 4
 fi
 
-if [ "${DEVICE}" = "USBSerial" ] && [ -z "${SERIALPORT}" ]; then
+if [ "${DEVICE_TYPE}" = "USBSerial" ] && [ -z "${SERIALPORT}" ]; then
     echo "Serial Port not set. Please use -is option or set \$SERIALPORT environment variable" >&2
     exit 5
 fi
@@ -46,8 +46,8 @@ STREAM_PROTO_OUT_FILE="${STREAM_PROTO_DIR}/${STREAM_OUT_FILE}"
 
 ST_CMD_FILE=
 # Select the appropriate ST_CMD file and
-# Generate .proto from .proto.in depending on $DEVICE
-case ${DEVICE} in
+# Generate .proto from .proto.in depending on $DEVICE_TYPE
+case ${DEVICE_TYPE} in
     USBSerial)
         ST_CMD_FILE=stValon5009USBSerial.cmd
         sed -e 's/<TERMINATOR>/\\r\\n/g' -e 's/<REPLY_TIMEOUT>/2000/g' ${STREAM_PROTO_IN_FILE} > ${STREAM_PROTO_OUT_FILE}
@@ -58,7 +58,7 @@ case ${DEVICE} in
         sed -e 's/<TERMINATOR>/\\r\\n/g' -e 's/<REPLY_TIMEOUT>/2000/g' ${STREAM_PROTO_IN_FILE} > ${STREAM_PROTO_OUT_FILE}
         ;;
     *)
-        echo "Invalid Device type: "${DEVICE} >&2
+        echo "Invalid Device type: "${DEVICE_TYPE} >&2
         exit 1
         ;;
 esac
