@@ -65,6 +65,6 @@ esac
 
 echo "Using st.cmd file: "${ST_CMD_FILE}
 
+set +e
 
-
-IPADDR="$IPADDR" IPPORT="$IPPORT" P="$P" R="$R" "$IOC_BIN" ${ST_CMD_FILE}
+IPADDR="$IPADDR" IPPORT="$IPPORT" SERIALPORT="$SERIALPORT" P="$P" R="$R" "$IOC_BIN" ${ST_CMD_FILE}
