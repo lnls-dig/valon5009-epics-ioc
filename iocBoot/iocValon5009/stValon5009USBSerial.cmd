@@ -17,7 +17,7 @@ asynSetOption("$(PORT)", 0, "baud", "9600")
 ## Load record instances
 dbLoadRecords("${TOP}/db/valon5009.db", "P=$(P), R=$(R), PORT=$(PORT)")
 
-< save_restore.cmd
+#< save_restore.cmd
 
 iocInit
 
@@ -25,5 +25,5 @@ iocInit
 # No sequencer program
 
 # Create manual trigger for Autosave
-create_monitor_set("auto_settings_valon5009.req", 5, "P=${P}, R=${R}")
-set_savefile_name("auto_settings_valon5009.req", "auto_settings_${P}${R}.sav")
+#create_monitor_set("auto_settings_valon5009.req", 5, "P=${P}, R=${R}")
+#set_savefile_name("auto_settings_valon5009.req", "auto_settings_${P}${R}.sav")
