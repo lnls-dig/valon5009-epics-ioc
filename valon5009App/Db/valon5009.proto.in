@@ -43,12 +43,30 @@ save {
 ######################################################################
 # Source frequency (MHz)
 
+inFreq1 {
+    out "S1";
+    in "";
+    out "F? m";
+    in "";
+    in "F %f MHz; // Act %*f MHz";
+}
+
+inFreq2 {
+    out "S2";
+    in "";
+    out "F? m";
+    in "";
+    in "F %f MHz; // Act %*f MHz";
+}
+
 outFreq1 {
     out "S1";
     in "";
     out "F %f m";
     in "";
     in "F %*f MHz; // Act %*f MHz";
+
+    @init { inFreq1; }
 }
 
 outFreq2 {
@@ -57,42 +75,28 @@ outFreq2 {
     out "F %f m";
     in "";
     in "F %*f MHz; // Act %*f MHz";
-}
 
-inFreq1 {
-      out "S1";
-      in "";
-      out "F? m";
-      in "";
-      in "F %f MHz; // Act %*f MHz";
-
-    @init{
-      out "S1";
-      in "";
-      out "F? m";
-      in "";
-      in "F %f MHz; // Act %*f MHz";
-    }
-}
-
-inFreq2 {
-      out "S2";
-      in "";
-      out "F? m";
-      in "";
-      in "F %f MHz; // Act %*f MHz";
-
-    @init{
-      out "S2";
-      in "";
-      out "F? m";
-      in "";
-      in "F %f MHz; // Act %*f MHz";
-    }
+    @init { inFreq2; }
 }
 
 ######################################################################
 # Frequency offset (MHz)
+
+inOffset1 {
+    out "S1";
+    in "";
+    out "OFF? m";
+    in "";
+    in "OFFSET %f MHz;";
+}
+
+inOffset2 {
+    out "S2";
+    in "";
+    out "OFF? m";
+    in "";
+    in "OFFSET %f MHz;";
+}
 
 outOffset1 {
     out "S1";
@@ -100,6 +104,8 @@ outOffset1 {
     out "OFF %f m";
     in "";
     in "OFFSET %*f MHz;";
+
+    @init { inOffset1; }
 }
 
 outOffset2 {
@@ -108,43 +114,28 @@ outOffset2 {
     out "OFF %f m";
     in "";
     in "OFFSET %*f MHz;";
+
+    @init { inOffset2; }
 }
-
-inOffset1 {
-      out "S1";
-      in "";
-      out "OFF? m";
-      in "";
-      in "OFFSET %f MHz;";
-
-    @init{
-      out "S1";
-      in "";
-      out "OFF? m";
-      in "";
-      in "OFFSET %f MHz;";
-    }
-}
-
-inOffset2 {
-      out "S2";
-      in "";
-      out "OFF? m";
-      in "";
-      in "OFFSET %f MHz;";
-
-    @init{
-      out "S2";
-      in "";
-      out "OFF? m";
-      in "";
-      in "OFFSET %f MHz;";
-    }
-}
-
 
 ######################################################################
 # Attenuator (dB)
+
+inAtten1 {
+    out "S1";
+    in "";
+    out "ATT?";
+    in "";
+    in "ATT %f; // dB";
+}
+
+inAtten2 {
+    out "S2";
+    in "";
+    out "ATT?";
+    in "";
+    in "ATT %f; // dB";
+}
 
 outAtten1 {
     out "S1";
@@ -152,6 +143,8 @@ outAtten1 {
     out "ATT %f";
     in "";
     in "ATT %*f; // dB";
+
+    @init { inAtten1; }
 }
 
 outAtten2 {
@@ -160,42 +153,29 @@ outAtten2 {
     out "ATT %f";
     in "";
     in "ATT %*f; // dB";
+
+    @init { inAtten2; }
 }
 
-inAtten1 {
-     out "S1";
-     in "";
-     out "ATT?";
-     in "";
-     in "ATT %f; // dB";
-
-   @init{
-     out "S1";
-     in "";
-     out "ATT?";
-     in "";
-     in "ATT %f; // dB";
-   }
-}
-
-inAtten2 {
-     out "S2";
-     in "";
-     out "ATT?";
-     in "";
-     in "ATT %f; // dB";
-
-   @init{
-     out "S2";
-     in "";
-     out "ATT?";
-     in "";
-     in "ATT %f; // dB";
-   }
-}
 
 ######################################################################
 # Power level option (0,1,2,3)
+
+inPwrLvl1 {
+    out "S1";
+    in "";
+    out "PLEV?";
+    in "";
+    in "PLEVEL %i; // %*i";
+}
+
+inPwrLvl2 {
+    out "S2";
+    in "";
+    out "PLEV?";
+    in "";
+    in "PLEVEL %i; // %*i";
+}
 
 outPwrLvl1 {
     out "S1";
@@ -203,6 +183,8 @@ outPwrLvl1 {
     out "PLEV %{0|1|2|3}";
     in "";
     in "PLEVEL %*i; // %*i";
+
+    @init { inPwrLvl1; }
 }
 
 outPwrLvl2 {
@@ -211,43 +193,29 @@ outPwrLvl2 {
     out "PLEV %{0|1|2|3}";
     in "";
     in "PLEVEL %*i; // %*i";
-}
 
-inPwrLvl1 {
-     out "S1";
-     in "";
-     out "PLEV?";
-     in "";
-     in "PLEVEL %i; // %*i";
-
-   @init{
-     out "S1";
-     in "";
-     out "PLEV?";
-     in "";
-     in "PLEVEL %i; // %*i";
-   }
-}
-
-inPwrLvl2 {
-     out "S2";
-     in "";
-     out "PLEV?";
-     in "";
-     in "PLEVEL %i; // %*i";
-
-   @init{
-     out "S2";
-     in "";
-     out "PLEV?";
-     in "";
-     in "PLEVEL %i; // %*i";
-   }
+    @init { inPwrLvl2; }
 }
 
 ######################################################################
 # Enable output buffer amplifier
 # Disabling the amplifier provides 50 dB attenuation
+
+inAmpEnbl1 {
+    out "S1";
+    in "";
+    out "OEN?";
+    in "";
+    in "OEN %i";
+}
+
+inAmpEnbl2 {
+    out "S2";
+    in "";
+    out "OEN?";
+    in "";
+    in "OEN %i";
+}
 
 outAmpEnbl1 {
     out "S1";
@@ -255,6 +223,8 @@ outAmpEnbl1 {
     out "OEN %{0|1}";
     in "";
     in "OEN %*i;";
+
+    @init { inAmpEnbl1; }
 }
 
 outAmpEnbl2 {
@@ -263,42 +233,28 @@ outAmpEnbl2 {
     out "OEN %{0|1}";
     in "";
     in "OEN %*i;";
-}
 
-inAmpEnbl1 {
-      out "S1";
-      in "";
-      out "OEN?";
-      in "";
-      in "OEN %i";
-
-    @init{
-      out "S1";
-      in "";
-      out "OEN?";
-      in "";
-      in "OEN %i";
-    }
-}
-
-inAmpEnbl2 {
-      out "S2";
-      in "";
-      out "OEN?";
-      in "";
-      in "OEN %i";
-
-    @init{
-      out "S2";
-      in "";
-      out "OEN?";
-      in "";
-      in "OEN %i";
-    }
+    @init { inAmpEnbl2; }
 }
 
 ######################################################################
 # Power source down
+
+inPwrOn1 {
+    out "S1";
+    in "";
+    out "PDN?";
+    in "";
+    in "PDN %{0|1}";
+}
+
+inPwrOn2 {
+    out "S2";
+    in "";
+    out "PDN?";
+    in "";
+    in "PDN %{0|1}";
+}
 
 outPwrOn1 {
     out "S1";
@@ -306,6 +262,8 @@ outPwrOn1 {
     out "PDN %{0|1}";
     in "";
     in "PDN %*i";
+
+    @init { inPwrOn1; }
 }
 
 outPwrOn2 {
@@ -314,121 +272,63 @@ outPwrOn2 {
     out "PDN %{0|1}";
     in "";
     in "PDN %*i";
-}
 
-inPwrOn1 {
-      out "S1";
-      in "";
-      out "PDN?";
-      in "";
-      in "PDN %{0|1}";
-
-    @init{
-      out "S1";
-      in "";
-      out "PDN?";
-      in "";
-      in "PDN %{0|1}";
-    }
-}
-
-inPwrOn2 {
-      out "S2";
-      in "";
-      out "PDN?";
-      in "";
-      in "PDN %{0|1}";
-
-    @init{
-      out "S2";
-      in "";
-      out "PDN?";
-      in "";
-      in "PDN %{0|1}";
-    }
+    @init { inPwrOn2; }
 }
 
 ######################################################################
 # Reference Frequency
 
-outRefFreq{
-    out "REF %f m";
-    in "";
-    in "REF %*f";
-}
-
 inRefFreq{
     out "REF? m";
     in "";
     in "REF %f";
+}
 
-    @init{
-      out "REF? m";
-      in "";
-      in "REF %f";
-    }
+outRefFreq{
+    out "REF %f m";
+    in "";
+    in "REF %*f";
+
+    @init { inRefFreq; }
 }
 
 ######################################################################
 # Reference Trimming
 
-outRefTrim{
-    out "REFT %i";
-    in "";
-    in "REFTrim %*i";
-}
-
 inRefTrim{
     out "REFT?";
     in "";
     in "REFTrim %i";
+}
 
-    @init{
-      out "REFT?";
-      in "";
-      in "REFTrim %i";
-    }
+outRefTrim{
+    out "REFT %i";
+    in "";
+    in "REFTrim %*i";
+
+    @init { inRefTrim; }
 }
 
 ######################################################################
 # Reference Source
 
-outRefSrcType{
-    out "REFS %i";
-    in "";
-    in "REFS %*i";
-}
-
 inRefSrcType{
     out "REFS?";
     in "";
     in "REFS %i";
+}
 
-    @init{
-      out "REFS?";
-      in "";
-      in "REFS %i";
-    }
+outRefSrcType{
+    out "REFS %i";
+    in "";
+    in "REFS %*i";
+
+    @init { inRefSrcType; }
 }
 
 ######################################################################
 # Phase/Frequency Detector Set Point
-
-outSrc1PFD{
-    out "S1";
-    in "";
-    out "PFD %f m";
-    in "";
-    in "PFD %*f";
-}
-
-outSrc2PFD{
-    out "S2";
-    in "";
-    out "PFD %f m";
-    in "";
-    in "PFD %*f";
-}
 
 inSrc1PFD{
     out "S1";
@@ -436,14 +336,6 @@ inSrc1PFD{
     out "PFD? m";
     in "";
     in "PFD %f";
-
-    @init{
-      out "S1";
-      in "";
-      out "PFD? m";
-      in "";
-      in "PFD %f";
-    }
 }
 
 inSrc2PFD{
@@ -452,34 +344,30 @@ inSrc2PFD{
     out "PFD? m";
     in "";
     in "PFD %f";
+}
 
-    @init{
-      out "S2";
-      in "";
-      out "PFD? m";
-      in "";
-      in "PFD %f";
-    }
+outSrc1PFD{
+    out "S1";
+    in "";
+    out "PFD %f m";
+    in "";
+    in "PFD %*f";
+
+    @init { inSrc1PFD; }
+}
+
+outSrc2PFD{
+    out "S2";
+    in "";
+    out "PFD %f m";
+    in "";
+    in "PFD %*f";
+
+    @init { inSrc2PFD; }
 }
 
 ######################################################################
 # Reference Doubler Enable
-
-outSrc1RefDoubler{
-    out "S1";
-    in "";
-    out "REFDB %{0|1}";
-    in "";
-    in "REFDB %*{0|1}";
-}
-
-outSrc2RefDoubler{
-    out "S2";
-    in "";
-    out "REFDB %{0|1}";
-    in "";
-    in "REFDB %*{0|1}";
-}
 
 inSrc1RefDoubler{
     out "S1";
@@ -487,14 +375,6 @@ inSrc1RefDoubler{
     out "REFDB?";
     in "";
     in "REFDB %{0|1}";
-
-    @init{
-      out "S1";
-      in "";
-      out "REFDB?";
-      in "";
-      in "REFDB %{0|1}";
-    }
 }
 
 inSrc2RefDoubler{
@@ -503,34 +383,30 @@ inSrc2RefDoubler{
     out "REFDB?";
     in "";
     in "REFDB %{0|1}";
+}
 
-    @init{
-      out "S2";
-      in "";
-      out "REFDB?";
-      in "";
-      in "REFDB %{0|1}";
-    }
+outSrc1RefDoubler{
+    out "S1";
+    in "";
+    out "REFDB %{0|1}";
+    in "";
+    in "REFDB %*{0|1}";
+
+    @init { inSrc1RefDoubler; }
+}
+
+outSrc2RefDoubler{
+    out "S2";
+    in "";
+    out "REFDB %{0|1}";
+    in "";
+    in "REFDB %*{0|1}";
+
+    @init { inSrc2RefDoubler; }
 }
 
 ######################################################################
 # Reference Divider Enable
-
-outSrc1RefDivider{
-    out "S1";
-    in "";
-    out "REFDIV %{0|1}";
-    in "";
-    in "REFDIV %*{0|1}";
-}
-
-outSrc2RefDivider{
-    out "S2";
-    in "";
-    out "REFDIV %{0|1}";
-    in "";
-    in "REFDIV %*{0|1}";
-}
 
 inSrc1RefDivider{
     out "S1";
@@ -538,14 +414,6 @@ inSrc1RefDivider{
     out "REFDIV?";
     in "";
     in "REFDIV %{0|1}";
-
-    @init{
-      out "S1";
-      in "";
-      out "REFDIV?";
-      in "";
-      in "REFDIV %{0|1}";
-    }
 }
 
 inSrc2RefDivider{
@@ -554,13 +422,24 @@ inSrc2RefDivider{
     out "REFDIV?";
     in "";
     in "REFDIV %{0|1}";
-
-    @init{
-      out "S2";
-      in "";
-      out "REFDIV?";
-      in "";
-      in "REFDIV %{0|1}";
-    }
 }
 
+outSrc1RefDivider{
+    out "S1";
+    in "";
+    out "REFDIV %{0|1}";
+    in "";
+    in "REFDIV %*{0|1}";
+
+    @init { inSrc1RefDivider; }
+}
+
+outSrc2RefDivider{
+    out "S2";
+    in "";
+    out "REFDIV %{0|1}";
+    in "";
+    in "REFDIV %*{0|1}";
+
+    @init { inSrc2RefDivider; }
+}
