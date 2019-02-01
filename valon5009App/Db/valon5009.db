@@ -215,7 +215,7 @@ record(ai, "$(P)$(R)Src2FreqOffset-RB"){
 record(ao, "$(P)$(R)Src1Pwr-SP"){
   field(PINI, "YES")
   field(DESC, "Set src 1 power directly")
-  field(PREC, "6")
+  field(PREC, "1")
   field(EGU, "dB")
   field(VAL, "0")
   field(FLNK, "$(P)$(R)Src1ConvLvl")
@@ -257,12 +257,11 @@ record(seq, "$(P)$(R)Src1SetOutputParam"){
   field(LNK2, "$(P)$(R)Src1Attenuator-SP PP")
   field(DOL3, "$(P)$(R)Src1SetOutputPwr.K")     # enable/disable buff amp
   field(LNK3, "$(P)$(R)Src1EnblBuffAmp-Sel PP")
-  field(FLNK, "$(P)$(R)Src1Pwr-RB")
 }
 
 record(scalcout, "$(P)$(R)Src1Pwr-RB"){
   field(DESC, "Src 1 power RB")
-  field(PREC, "6")
+  field(PREC, "1")
   field(EGU, "dB")
   field(INAA, "$(P)$(R)Src1PwrLvl-Sts CPP")
   field(INPB, "$(P)$(R)Src1Attenuator-RB CPP")
@@ -274,7 +273,7 @@ record(scalcout, "$(P)$(R)Src1Pwr-RB"){
 record(ao, "$(P)$(R)Src2Pwr-SP"){
   field(PINI, "YES")
   field(DESC, "Set src 2 power directly")
-  field(PREC, "6")
+  field(PREC, "1")
   field(EGU, "dB")
   field(VAL, "0")
   field(FLNK, "$(P)$(R)Src2ConvLvl")
@@ -316,12 +315,11 @@ record(seq, "$(P)$(R)Src2SetOutputParam"){
   field(LNK2, "$(P)$(R)Src2Attenuator-SP PP")
   field(DOL3, "$(P)$(R)Src2SetOutputPwr.K")     # enable/disable buff amp
   field(LNK3, "$(P)$(R)Src2EnblBuffAmp-Sel PP")
-  field(FLNK, "$(P)$(R)Src2Pwr-RB")
 }
 
 record(scalcout, "$(P)$(R)Src2Pwr-RB"){
   field(DESC, "Src 2 power RB")
-  field(PREC, "6")
+  field(PREC, "1")
   field(EGU, "dB")
   field(INAA, "$(P)$(R)Src2PwrLvl-Sts CPP")
   field(INPB, "$(P)$(R)Src2Attenuator-RB CPP")
@@ -334,13 +332,13 @@ record(scalcout, "$(P)$(R)Src2Pwr-RB"){
 
 record(ao, "$(P)$(R)AttenuatorStep-Cte"){
   field(DESC, "Min attenuator step")
-  field(PREC, "6")
+  field(PREC, "1")
   field(VAL, "0.5") # constant
 }
 
 record(ao, "$(P)$(R)Src1Attenuator-SP"){
   field(DESC, "Source 1 attenuator")
-  field(PREC, "6")
+  field(PREC, "1")
   field(DRVH, "31.5")
   field(DRVL, "0")
   field(EGU, "dB")
@@ -360,14 +358,14 @@ record(calcout, "$(P)$(R)Src1AttenuatorCalc"){
 record(ai, "$(P)$(R)Src1Attenuator-RB"){
   field(DESC, "Source 1 attenuator RB")
   field(DTYP, "stream")
-  field(PREC, "6")
+  field(PREC, "1")
   field(EGU, "dB")
   field(INP, "@valon5009.proto inAtten1 $(PORT)")
 }
 
 record(ao, "$(P)$(R)Src2Attenuator-SP"){
   field(DESC, "Source 2 attenuator")
-  field(PREC, "6")
+  field(PREC, "1")
   field(DRVH, "31.5")
   field(DRVL, "0")
   field(EGU, "dB")
@@ -387,7 +385,7 @@ record(calcout, "$(P)$(R)Src2AttenuatorCalc"){
 record(ai, "$(P)$(R)Src2Attenuator-RB"){
   field(DESC, "Source 2 attenuator RB")
   field(DTYP, "stream")
-  field(PREC, "6")
+  field(PREC, "1")
   field(EGU, "dB")
   field(INP, "@valon5009.proto inAtten2 $(PORT)")
 }
@@ -456,7 +454,7 @@ record(mbbi, "$(P)$(R)Src2PwrLvl-Sts"){
 
 record(ao, "$(P)$(R)BuffAmpGain-Cte"){
   field(DESC, "Buff amplifier gain")
-  field(PREC, "6")
+  field(PREC, "1")
   field(EGU, "dB")
   field(VAL, "25") # constant
 }
