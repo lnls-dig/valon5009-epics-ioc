@@ -227,7 +227,8 @@ record(scalcout, "$(P)$(R)Src1ConvLvl"){
   field(INBB, "$(P)$(R)Src1PwrLvl-Sel.ONST")
   field(INCC, "$(P)$(R)Src1PwrLvl-Sel.TWST")
   field(INDD, "$(P)$(R)Src1PwrLvl-Sel.THST")
-  field(CALC, "A:=dbl(AA);B:=dbl(BB);C:=dbl(CC);D:=dbl(DD);1")
+  # VAL is incremented so we can monitor if there is an infinite loop
+  field(CALC, "A:=dbl(AA);B:=dbl(BB);C:=dbl(CC);D:=dbl(DD);VAL+1")
   field(FLNK, "$(P)$(R)Src1SetOutputPwr")
 }
 
@@ -259,6 +260,19 @@ record(seq, "$(P)$(R)Src1SetOutputParam"){
   field(LNK3, "$(P)$(R)Src1EnblBuffAmp-Sel PP")
 }
 
+# The Src1Pwr-RB record sets Src1Pwr-SP with
+# its value whenever there is a monitor of some
+# of its inputs.
+#
+# ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !
+#                  WARNING
+#
+#         The records in input links
+#         MUST NOT have MDEL set to -1.
+#
+#     Otherwise, we have an INFINITE LOOP!
+# ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !
+
 record(scalcout, "$(P)$(R)Src1Pwr-RB"){
   field(DESC, "Src 1 power RB")
   field(PREC, "1")
@@ -267,8 +281,14 @@ record(scalcout, "$(P)$(R)Src1Pwr-RB"){
   field(INPB, "$(P)$(R)Src1Attenuator-RB CPP")
   field(INPC, "$(P)$(R)Src1EnblBuffAmp-Sts CPP")
   field(INPD, "$(P)$(R)BuffAmpGain-Cte CPP")
+  # INPE is only used in order to trig set points
+  # when attenuator step changes
+  field(INPE, "$(P)$(R)AttenuatorStep-Cte CPP")
   field(CALC, "dbl(AA)-B-(!C)*D")
+  field(OUT, "$(P)$(R)Src1Pwr-SP PP")
 }
+
+######
 
 record(ao, "$(P)$(R)Src2Pwr-SP"){
   field(PINI, "YES")
@@ -317,6 +337,19 @@ record(seq, "$(P)$(R)Src2SetOutputParam"){
   field(LNK3, "$(P)$(R)Src2EnblBuffAmp-Sel PP")
 }
 
+# The Src2Pwr-RB record sets Src2Pwr-SP with
+# its value whenever there is a monitor of some
+# of its inputs.
+#
+# ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !
+#                  WARNING
+#
+#         The records in input links
+#         MUST NOT have MDEL set to -1.
+#
+#     Otherwise, we have an INFINITE LOOP!
+# ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !
+
 record(scalcout, "$(P)$(R)Src2Pwr-RB"){
   field(DESC, "Src 2 power RB")
   field(PREC, "1")
@@ -325,7 +358,11 @@ record(scalcout, "$(P)$(R)Src2Pwr-RB"){
   field(INPB, "$(P)$(R)Src2Attenuator-RB CPP")
   field(INPC, "$(P)$(R)Src2EnblBuffAmp-Sts CPP")
   field(INPD, "$(P)$(R)BuffAmpGain-Cte CPP")
+  # INPE is only used in order to trig set points
+  # when attenuator step changes
+  field(INPE, "$(P)$(R)AttenuatorStep-Cte CPP")
   field(CALC, "dbl(AA)-B-(!C)*D")
+  field(OUT, "$(P)$(R)Src2Pwr-SP PP")
 }
 
 # Attenuator
