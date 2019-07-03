@@ -24,7 +24,7 @@
   <scripts />
   <show_close_button>true</show_close_button>
   <show_edit_range>true</show_edit_range>
-  <show_grid>true</show_grid>
+  <show_grid>false</show_grid>
   <show_ruler>true</show_ruler>
   <snap_to_geometry>true</snap_to_geometry>
   <widget_type>Display</widget_type>
@@ -45,7 +45,7 @@
     <enabled>true</enabled>
     <fc>false</fc>
     <font>
-      <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
     </font>
     <foreground_color>
       <color red="192" green="192" blue="192" />
@@ -146,14 +146,14 @@ $(pv_value)</tooltip>
       <border_width>1</border_width>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <foreground_color>
         <color red="0" green="0" blue="0" />
       </foreground_color>
       <format_type>0</format_type>
-      <height>20</height>
+      <height>25</height>
       <horizontal_alignment>0</horizontal_alignment>
       <name>Text Update_15</name>
       <precision>0</precision>
@@ -176,11 +176,11 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Text Update</widget_type>
-      <width>99</width>
+      <width>110</width>
       <wrap_words>false</wrap_words>
       <wuid>6e34871b:162f3391a85:-7054</wuid>
-      <x>220</x>
-      <y>247</y>
+      <x>222</x>
+      <y>245</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <actions hook="false" hook_all="false" />
@@ -195,12 +195,12 @@ $(pv_value)</tooltip>
       <border_width>1</border_width>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <foreground_color>
         <color red="0" green="0" blue="0" />
       </foreground_color>
-      <height>20</height>
+      <height>25</height>
       <horizontal_alignment>0</horizontal_alignment>
       <name>Label_32</name>
       <rules />
@@ -210,17 +210,17 @@ $(pv_value)</tooltip>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <scripts />
-      <text>Power Level</text>
+      <text>Pwr. Level</text>
       <tooltip></tooltip>
       <transparent>true</transparent>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>92</width>
+      <width>85</width>
       <wrap_words>false</wrap_words>
       <wuid>6e34871b:162f3391a85:-730c</wuid>
-      <x>14</x>
-      <y>247</y>
+      <x>15</x>
+      <y>245</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.choiceButton" version="1.0.0">
       <actions hook="false" hook_all="false" />
@@ -237,13 +237,13 @@ $(pv_value)</tooltip>
       <border_width>1</border_width>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <foreground_color>
         <color red="0" green="0" blue="0" />
       </foreground_color>
-      <height>33</height>
+      <height>30</height>
       <horizontal>true</horizontal>
       <items_from_pv>true</items_from_pv>
       <name>Choice Button_1</name>
@@ -263,10 +263,10 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
       <visible>true</visible>
       <widget_type>Choice Button</widget_type>
-      <width>95</width>
+      <width>110</width>
       <wuid>7c36dbd5:1656bdd10a9:-67cd</wuid>
-      <x>102</x>
-      <y>240</y>
+      <x>104</x>
+      <y>243</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <actions hook="false" hook_all="false" />
@@ -281,12 +281,12 @@ $(pv_value)</tooltip>
       <border_width>1</border_width>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="13" style="1" pixels="false">Header 3</opifont.name>
+        <opifont.name fontName="Sans" height="12" style="1" pixels="false">Header 3</opifont.name>
       </font>
       <foreground_color>
         <color red="0" green="0" blue="0" />
       </foreground_color>
-      <height>20</height>
+      <height>25</height>
       <horizontal_alignment>0</horizontal_alignment>
       <name>Label_28</name>
       <rules />
@@ -302,7 +302,7 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>132</width>
+      <width>157</width>
       <wrap_words>false</wrap_words>
       <wuid>7765ce88:1689f038d58:-7ed6</wuid>
       <x>15</x>
@@ -321,12 +321,12 @@ $(pv_value)</tooltip>
       <border_width>1</border_width>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <foreground_color>
         <color red="0" green="0" blue="0" />
       </foreground_color>
-      <height>43</height>
+      <height>33</height>
       <horizontal_alignment>0</horizontal_alignment>
       <name>Label_47</name>
       <rules />
@@ -337,17 +337,17 @@ $(pv_value)</tooltip>
       </scale_options>
       <scripts />
       <show_scrollbar>false</show_scrollbar>
-      <text>Enable Buffer Amplifier</text>
+      <text>Enable Buffer Amp. Amplifier</text>
       <tooltip></tooltip>
       <transparent>true</transparent>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>92</width>
+      <width>85</width>
       <wrap_words>true</wrap_words>
       <wuid>7765ce88:1689f038d58:-7ed5</wuid>
-      <x>14</x>
-      <y>75</y>
+      <x>15</x>
+      <y>80</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.BoolButton" version="1.0.0">
       <actions hook="false" hook_all="false" />
@@ -368,7 +368,7 @@ $(pv_value)</tooltip>
       <effect_3d>true</effect_3d>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <foreground_color>
@@ -408,7 +408,7 @@ $(pv_value)</tooltip>
       <widget_type>Boolean Button</widget_type>
       <width>55</width>
       <wuid>7765ce88:1689f038d58:-7ed4</wuid>
-      <x>104</x>
+      <x>131</x>
       <y>81</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
@@ -433,7 +433,7 @@ $(pv_value)</tooltip>
       <effect_3d>true</effect_3d>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <foreground_color>
@@ -466,7 +466,7 @@ $(pv_value)</tooltip>
       <widget_type>LED</widget_type>
       <width>20</width>
       <wuid>7765ce88:1689f038d58:-7ed3</wuid>
-      <x>177</x>
+      <x>255</x>
       <y>87</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
@@ -482,12 +482,12 @@ $(pv_value)</tooltip>
       <border_width>1</border_width>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <foreground_color>
         <color red="0" green="0" blue="0" />
       </foreground_color>
-      <height>20</height>
+      <height>25</height>
       <horizontal_alignment>0</horizontal_alignment>
       <name>Label_48</name>
       <rules />
@@ -497,17 +497,17 @@ $(pv_value)</tooltip>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <scripts />
-      <text>Att Step</text>
+      <text>Att. Step</text>
       <tooltip></tooltip>
       <transparent>true</transparent>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>89</width>
+      <width>85</width>
       <wrap_words>false</wrap_words>
       <wuid>7765ce88:1689f038d58:-7ebc</wuid>
-      <x>14</x>
-      <y>293</y>
+      <x>15</x>
+      <y>290</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
       <actions hook="false" hook_all="false" />
@@ -525,14 +525,14 @@ $(pv_value)</tooltip>
       <border_width>1</border_width>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <foreground_color>
         <color red="0" green="0" blue="0" />
       </foreground_color>
       <format_type>0</format_type>
-      <height>20</height>
+      <height>25</height>
       <horizontal_alignment>0</horizontal_alignment>
       <name>Text Update_30</name>
       <precision>0</precision>
@@ -555,11 +555,11 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Text Update</widget_type>
-      <width>99</width>
+      <width>110</width>
       <wrap_words>false</wrap_words>
       <wuid>7765ce88:1689f038d58:-7ebb</wuid>
       <x>222</x>
-      <y>293</y>
+      <y>290</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
       <actions hook="false" hook_all="false" />
@@ -578,7 +578,7 @@ $(pv_value)</tooltip>
       <confirm_message></confirm_message>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <foreground_color>
@@ -613,7 +613,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <visible>true</visible>
       <widget_type>Text Input</widget_type>
-      <width>89</width>
+      <width>110</width>
       <wuid>7765ce88:1689f038d58:-7eb1</wuid>
       <x>104</x>
       <y>290</y>
@@ -634,14 +634,14 @@ $(pv_value)</tooltip>
       <border_width>1</border_width>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <foreground_color>
         <color red="0" green="0" blue="0" />
       </foreground_color>
       <format_type>0</format_type>
-      <height>20</height>
+      <height>25</height>
       <horizontal_alignment>0</horizontal_alignment>
       <name>Text Update_31</name>
       <precision>0</precision>
@@ -664,11 +664,11 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Text Update</widget_type>
-      <width>99</width>
+      <width>110</width>
       <wrap_words>false</wrap_words>
       <wuid>7765ce88:1689f038d58:-7ea8</wuid>
-      <x>220</x>
-      <y>332</y>
+      <x>222</x>
+      <y>329</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
       <actions hook="false" hook_all="false" />
@@ -687,7 +687,7 @@ $(pv_value)</tooltip>
       <confirm_message></confirm_message>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <foreground_color>
@@ -722,7 +722,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <visible>true</visible>
       <widget_type>Text Input</widget_type>
-      <width>89</width>
+      <width>110</width>
       <wuid>7765ce88:1689f038d58:-7ea7</wuid>
       <x>104</x>
       <y>329</y>
@@ -740,7 +740,7 @@ $(pv_value)</tooltip>
       <border_width>1</border_width>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="1" pixels="false">Default Bold</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="1" pixels="false">Default Bold</opifont.name>
       </font>
       <foreground_color>
         <color name="Major" red="250" green="12" blue="14" />
@@ -764,7 +764,7 @@ $(pv_value)</tooltip>
       <width>80</width>
       <wrap_words>false</wrap_words>
       <wuid>7765ce88:1689f038d58:-7e6a</wuid>
-      <x>260</x>
+      <x>255</x>
       <y>6</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
@@ -780,12 +780,12 @@ $(pv_value)</tooltip>
       <border_width>1</border_width>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <foreground_color>
         <color red="0" green="0" blue="0" />
       </foreground_color>
-      <height>30</height>
+      <height>25</height>
       <horizontal_alignment>0</horizontal_alignment>
       <name>Label_23</name>
       <rules />
@@ -795,17 +795,17 @@ $(pv_value)</tooltip>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <scripts />
-      <text>Freq Offset</text>
+      <text>Freq. Offset</text>
       <tooltip></tooltip>
       <transparent>true</transparent>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>97</width>
+      <width>85</width>
       <wrap_words>false</wrap_words>
       <wuid>6e34871b:162f3391a85:-7317</wuid>
-      <x>14</x>
-      <y>201</y>
+      <x>15</x>
+      <y>203</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
       <actions hook="false" hook_all="false" />
@@ -824,7 +824,7 @@ $(pv_value)</tooltip>
       <confirm_message></confirm_message>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <foreground_color>
@@ -859,10 +859,10 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <visible>true</visible>
       <widget_type>Text Input</widget_type>
-      <width>89</width>
+      <width>110</width>
       <wuid>6e34871b:162f3391a85:-705b</wuid>
       <x>104</x>
-      <y>203</y>
+      <y>204</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
       <actions hook="false" hook_all="false" />
@@ -880,14 +880,14 @@ $(pv_value)</tooltip>
       <border_width>1</border_width>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <foreground_color>
         <color red="0" green="0" blue="0" />
       </foreground_color>
       <format_type>0</format_type>
-      <height>20</height>
+      <height>25</height>
       <horizontal_alignment>0</horizontal_alignment>
       <name>Text Update_10</name>
       <precision>0</precision>
@@ -910,11 +910,11 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Text Update</widget_type>
-      <width>99</width>
+      <width>110</width>
       <wrap_words>false</wrap_words>
       <wuid>6e34871b:162f3391a85:-7319</wuid>
       <x>222</x>
-      <y>206</y>
+      <y>203</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <actions hook="false" hook_all="false" />
@@ -929,12 +929,12 @@ $(pv_value)</tooltip>
       <border_width>1</border_width>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <foreground_color>
         <color red="0" green="0" blue="0" />
       </foreground_color>
-      <height>20</height>
+      <height>25</height>
       <horizontal_alignment>0</horizontal_alignment>
       <name>Label_21</name>
       <rules />
@@ -944,16 +944,16 @@ $(pv_value)</tooltip>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <scripts />
-      <text>Output Power</text>
+      <text>Output Pwr.</text>
       <tooltip></tooltip>
       <transparent>true</transparent>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>101</width>
+      <width>85</width>
       <wrap_words>false</wrap_words>
       <wuid>7765ce88:1689f038d58:-7446</wuid>
-      <x>14</x>
+      <x>15</x>
       <y>165</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
@@ -972,14 +972,14 @@ $(pv_value)</tooltip>
       <border_width>1</border_width>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <foreground_color>
         <color red="0" green="0" blue="0" />
       </foreground_color>
       <format_type>0</format_type>
-      <height>20</height>
+      <height>25</height>
       <horizontal_alignment>0</horizontal_alignment>
       <name>Text Update_13</name>
       <precision>0</precision>
@@ -1002,11 +1002,11 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Text Update</widget_type>
-      <width>100</width>
+      <width>110</width>
       <wrap_words>false</wrap_words>
       <wuid>7765ce88:1689f038d58:-7445</wuid>
       <x>222</x>
-      <y>129</y>
+      <y>126</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
       <actions hook="false" hook_all="false" />
@@ -1025,7 +1025,7 @@ $(pv_value)</tooltip>
       <confirm_message></confirm_message>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <foreground_color>
@@ -1060,7 +1060,7 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <visible>true</visible>
       <widget_type>Text Input</widget_type>
-      <width>91</width>
+      <width>110</width>
       <wuid>7765ce88:1689f038d58:-7444</wuid>
       <x>104</x>
       <y>126</y>
@@ -1078,12 +1078,12 @@ $(pv_value)</tooltip>
       <border_width>1</border_width>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <foreground_color>
         <color red="0" green="0" blue="0" />
       </foreground_color>
-      <height>37</height>
+      <height>25</height>
       <horizontal_alignment>0</horizontal_alignment>
       <name>Label_54</name>
       <rules />
@@ -1100,11 +1100,11 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>92</width>
+      <width>85</width>
       <wrap_words>true</wrap_words>
       <wuid>7765ce88:1689f038d58:-7441</wuid>
-      <x>14</x>
-      <y>36</y>
+      <x>15</x>
+      <y>42</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.BoolButton" version="1.0.0">
       <actions hook="false" hook_all="false" />
@@ -1125,7 +1125,7 @@ $(pv_value)</tooltip>
       <effect_3d>true</effect_3d>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <foreground_color>
@@ -1165,7 +1165,7 @@ $(pv_value)</tooltip>
       <widget_type>Boolean Button</widget_type>
       <width>55</width>
       <wuid>7765ce88:1689f038d58:-7440</wuid>
-      <x>104</x>
+      <x>131</x>
       <y>39</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
@@ -1190,7 +1190,7 @@ $(pv_value)</tooltip>
       <effect_3d>true</effect_3d>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <foreground_color>
@@ -1223,7 +1223,7 @@ $(pv_value)</tooltip>
       <widget_type>LED</widget_type>
       <width>20</width>
       <wuid>7765ce88:1689f038d58:-743f</wuid>
-      <x>177</x>
+      <x>255</x>
       <y>45</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
@@ -1239,12 +1239,12 @@ $(pv_value)</tooltip>
       <border_width>1</border_width>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <foreground_color>
         <color red="0" green="0" blue="0" />
       </foreground_color>
-      <height>20</height>
+      <height>25</height>
       <horizontal_alignment>0</horizontal_alignment>
       <name>Label_55</name>
       <rules />
@@ -1260,11 +1260,11 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>101</width>
+      <width>85</width>
       <wrap_words>false</wrap_words>
       <wuid>7765ce88:1689f038d58:-743e</wuid>
-      <x>14</x>
-      <y>129</y>
+      <x>15</x>
+      <y>126</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
       <actions hook="false" hook_all="false" />
@@ -1282,14 +1282,14 @@ $(pv_value)</tooltip>
       <border_width>1</border_width>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <foreground_color>
         <color red="0" green="0" blue="0" />
       </foreground_color>
       <format_type>0</format_type>
-      <height>20</height>
+      <height>25</height>
       <horizontal_alignment>0</horizontal_alignment>
       <name>Text Update_1</name>
       <precision>0</precision>
@@ -1312,7 +1312,7 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Text Update</widget_type>
-      <width>100</width>
+      <width>110</width>
       <wrap_words>false</wrap_words>
       <wuid>7765ce88:1689f038d58:-743d</wuid>
       <x>222</x>
@@ -1335,7 +1335,7 @@ $(pv_value)</tooltip>
       <confirm_message></confirm_message>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <foreground_color>
@@ -1370,10 +1370,10 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <visible>true</visible>
       <widget_type>Text Input</widget_type>
-      <width>91</width>
+      <width>110</width>
       <wuid>7765ce88:1689f038d58:-743c</wuid>
       <x>104</x>
-      <y>162</y>
+      <y>165</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
       <actions hook="false" hook_all="false" />
@@ -1391,14 +1391,14 @@ $(pv_value)</tooltip>
       <border_width>1</border_width>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <foreground_color>
         <color red="0" green="0" blue="0" />
       </foreground_color>
       <format_type>0</format_type>
-      <height>20</height>
+      <height>25</height>
       <horizontal_alignment>0</horizontal_alignment>
       <name>Text Update_35</name>
       <precision>0</precision>
@@ -1421,11 +1421,11 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Text Update</widget_type>
-      <width>99</width>
+      <width>110</width>
       <wrap_words>false</wrap_words>
       <wuid>7765ce88:1689f038d58:-6b36</wuid>
-      <x>220</x>
-      <y>365</y>
+      <x>222</x>
+      <y>368</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
       <actions hook="false" hook_all="false" />
@@ -1444,7 +1444,7 @@ $(pv_value)</tooltip>
       <confirm_message></confirm_message>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <foreground_color>
@@ -1479,10 +1479,10 @@ $(pv_value)</tooltip>
       <transparent>false</transparent>
       <visible>true</visible>
       <widget_type>Text Input</widget_type>
-      <width>89</width>
+      <width>110</width>
       <wuid>7765ce88:1689f038d58:-6b35</wuid>
       <x>104</x>
-      <y>365</y>
+      <y>368</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <actions hook="false" hook_all="false" />
@@ -1497,12 +1497,12 @@ $(pv_value)</tooltip>
       <border_width>1</border_width>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <foreground_color>
         <color red="0" green="0" blue="0" />
       </foreground_color>
-      <height>44</height>
+      <height>33</height>
       <horizontal_alignment>0</horizontal_alignment>
       <name>Label_57</name>
       <rules />
@@ -1513,17 +1513,17 @@ $(pv_value)</tooltip>
       </scale_options>
       <scripts />
       <show_scrollbar>false</show_scrollbar>
-      <text>Buffer Amp Gain</text>
+      <text>Buffer Amp. Gain</text>
       <tooltip></tooltip>
       <transparent>true</transparent>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>89</width>
+      <width>85</width>
       <wrap_words>true</wrap_words>
       <wuid>7765ce88:1689f038d58:-6b34</wuid>
-      <x>14</x>
-      <y>356</y>
+      <x>15</x>
+      <y>364</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <actions hook="false" hook_all="false" />
@@ -1538,12 +1538,12 @@ $(pv_value)</tooltip>
       <border_width>1</border_width>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="Ubuntu" height="11" style="0" pixels="false">Default</opifont.name>
+        <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
       </font>
       <foreground_color>
         <color red="0" green="0" blue="0" />
       </foreground_color>
-      <height>32</height>
+      <height>25</height>
       <horizontal_alignment>0</horizontal_alignment>
       <name>Label_49</name>
       <rules />
@@ -1559,10 +1559,10 @@ $(pv_value)</tooltip>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Label</widget_type>
-      <width>89</width>
+      <width>85</width>
       <wrap_words>false</wrap_words>
       <wuid>7765ce88:1689f038d58:-7ea9</wuid>
-      <x>14</x>
+      <x>15</x>
       <y>329</y>
     </widget>
   </widget>
