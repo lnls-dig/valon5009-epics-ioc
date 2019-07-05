@@ -216,7 +216,7 @@ record(ao, "$(P)$(R)Src1Pwr-SP"){
   field(PINI, "YES")
   field(DESC, "Set src 1 power directly")
   field(PREC, "1")
-  field(EGU, "dB")
+  field(EGU, "dBm")
   field(VAL, "0")
   field(FLNK, "$(P)$(R)Src1ConvLvl")
 }
@@ -234,7 +234,7 @@ record(scalcout, "$(P)$(R)Src1ConvLvl"){
 record(sub, "$(P)$(R)Src1SetOutputPwr"){
   field(DESC, "Set level and att based on SP")
   field(SNAM, "setOutput")
-  field(EGU, "dB")
+  field(EGU, "dBm")
   field(PREC, "6")
   field(INPA, "$(P)$(R)Src1Pwr-SP")             # set point
   field(INPB, "$(P)$(R)Src1ConvLvl.A")          # pwr level 0
@@ -262,7 +262,7 @@ record(seq, "$(P)$(R)Src1SetOutputParam"){
 record(scalcout, "$(P)$(R)Src1Pwr-RB"){
   field(DESC, "Src 1 power RB")
   field(PREC, "1")
-  field(EGU, "dB")
+  field(EGU, "dBm")
   field(INAA, "$(P)$(R)Src1PwrLvl-Sts CPP")
   field(INPB, "$(P)$(R)Src1Attenuator-RB CPP")
   field(INPC, "$(P)$(R)Src1EnblBuffAmp-Sts CPP")
@@ -274,7 +274,7 @@ record(ao, "$(P)$(R)Src2Pwr-SP"){
   field(PINI, "YES")
   field(DESC, "Set src 2 power directly")
   field(PREC, "1")
-  field(EGU, "dB")
+  field(EGU, "dBm")
   field(VAL, "0")
   field(FLNK, "$(P)$(R)Src2ConvLvl")
 }
@@ -292,7 +292,7 @@ record(scalcout, "$(P)$(R)Src2ConvLvl"){
 record(sub, "$(P)$(R)Src2SetOutputPwr"){
   field(DESC, "Set level and att based on SP")
   field(SNAM, "setOutput")
-  field(EGU, "dB")
+  field(EGU, "dBm")
   field(PREC, "6")
   field(INPA, "$(P)$(R)Src2Pwr-SP")             # set point
   field(INPB, "$(P)$(R)Src2ConvLvl.A")          # pwr level 0
@@ -320,7 +320,7 @@ record(seq, "$(P)$(R)Src2SetOutputParam"){
 record(scalcout, "$(P)$(R)Src2Pwr-RB"){
   field(DESC, "Src 2 power RB")
   field(PREC, "1")
-  field(EGU, "dB")
+  field(EGU, "dBm")
   field(INAA, "$(P)$(R)Src2PwrLvl-Sts CPP")
   field(INPB, "$(P)$(R)Src2Attenuator-RB CPP")
   field(INPC, "$(P)$(R)Src2EnblBuffAmp-Sts CPP")
@@ -393,14 +393,14 @@ record(ai, "$(P)$(R)Src2Attenuator-RB"){
 # Power level
 
 record(mbbo, "$(P)$(R)Src1PwrLvl-Sel"){
-  field(DESC, "Source 1 power level mode")
-  field(ZRST, "6")
+  field(DESC, "Source 1 power level [dBm]")
+  field(ZRST, "6")  # level 0 = 6 dBm
   field(ZRVL, "0")
-  field(ONST, "9")
+  field(ONST, "9")  # level 1 = 9 dBm
   field(ONVL, "1")
-  field(TWST, "12")
+  field(TWST, "12") # level 2 = 12 dBm
   field(TWVL, "2")
-  field(THST, "15")
+  field(THST, "15") # level 3 = 15 dBm
   field(THVL, "3")
   field(DTYP, "stream")
   field(OUT, "@valon5009.proto outPwrLvl1 $(PORT)")
@@ -409,27 +409,27 @@ record(mbbo, "$(P)$(R)Src1PwrLvl-Sel"){
 
 record(mbbi, "$(P)$(R)Src1PwrLvl-Sts"){
   field(DESC, "Source 1 power level mode Sts")
-  field(ZRST, "6")
+  field(ZRST, "6 dBm")
   field(ZRVL, "0")
-  field(ONST, "9")
+  field(ONST, "9 dBm")
   field(ONVL, "1")
-  field(TWST, "12")
+  field(TWST, "12 dBm")
   field(TWVL, "2")
-  field(THST, "15")
+  field(THST, "15 dBm")
   field(THVL, "3")
   field(DTYP, "stream")
   field(INP, "@valon5009.proto inPwrLvl1 $(PORT)")
 }
 
 record(mbbo, "$(P)$(R)Src2PwrLvl-Sel"){
-  field(DESC, "Source 2 power level mode")
-  field(ZRST, "6")
+  field(DESC, "Source 2 power level [dBm]")
+  field(ZRST, "6")  # level 0 = 6 dBm
   field(ZRVL, "0")
-  field(ONST, "9")
+  field(ONST, "9")  # level 1 = 9 dBm
   field(ONVL, "1")
-  field(TWST, "12")
+  field(TWST, "12") # level 2 = 12 dBm
   field(TWVL, "2")
-  field(THST, "15")
+  field(THST, "15") # level 3 = 15 dBm
   field(THVL, "3")
   field(DTYP, "stream")
   field(OUT, "@valon5009.proto outPwrLvl2 $(PORT)")
@@ -438,13 +438,13 @@ record(mbbo, "$(P)$(R)Src2PwrLvl-Sel"){
 
 record(mbbi, "$(P)$(R)Src2PwrLvl-Sts"){
   field(DESC, "Source 2 power level mode Sts")
-  field(ZRST, "6")
+  field(ZRST, "6 dBm")
   field(ZRVL, "0")
-  field(ONST, "9")
+  field(ONST, "9 dBm")
   field(ONVL, "1")
-  field(TWST, "12")
+  field(TWST, "12 dBm")
   field(TWVL, "2")
-  field(THST, "15")
+  field(THST, "15 dBm")
   field(THVL, "3")
   field(DTYP, "stream")
   field(INP, "@valon5009.proto inPwrLvl2 $(PORT)")
