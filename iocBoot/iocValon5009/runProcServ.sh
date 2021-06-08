@@ -7,8 +7,9 @@ set +u
 . ./parseCMDOpts.sh "$@"
 
 # Use defaults if not set
+UNIX_SOCKET=""
 if [ -z "${DEVICE_TELNET_PORT}" ]; then
-   DEVICE_TELNET_PORT="20000"
+    UNIX_SOCKET="true"
 fi
 
 if [ -z "${VALON_INSTANCE}" ]; then
@@ -18,4 +19,8 @@ fi
 set -u
 
 # Run run*.sh scripts with procServ
-/usr/local/bin/procServ -f -n ${VALON_INSTANCE} -i ^C^D ${DEVICE_TELNET_PORT} ./runValon5009.sh "$@"
+if [ "${UNIX_SOCKET}" ]; then
+    /usr/local/bin/procServ -f -n ${VALON_INSTANCE} -i ^C^D unix:./procserv.sock ./runValon5009.sh "$@"
+else
+    /usr/local/bin/procServ -f -n ${VALON_INSTANCE} -i ^C^D ${DEVICE_TELNET_PORT} ./runValon5009.sh "$@"
+fi
